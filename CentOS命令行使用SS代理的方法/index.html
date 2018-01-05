@@ -45,7 +45,7 @@
     
     <title>
         
-            Docker pull镜像失败的解决方案 | 
+            CentOS命令行使用SS代理的方法 | 
         
         404 NotFound
     </title>
@@ -56,7 +56,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="golang backend,Docker">
+    <meta name="keywords" content="golang backend,CentOS,Shadowsocks">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -222,7 +222,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="404 NotFound">
-    <meta name="msapplication-starturl" content="http://404-notfound.com/2017/10/01/Docker-pull镜像失败的解决方案/">
+    <meta name="msapplication-starturl" content="http://404-notfound.com/CentOS命令行使用SS代理的方法/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="404 NotFound">
@@ -237,16 +237,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://404-notfound.com/2017/10/01/Docker-pull镜像失败的解决方案/">
+    <meta property="og:url" content="http://404-notfound.com/CentOS命令行使用SS代理的方法/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Docker pull镜像失败的解决方案 | 404 NotFound">
+    <meta property="og:title" content="CentOS命令行使用SS代理的方法 | 404 NotFound">
     <meta property="og:image" content="/img/favicon.ico">
     <meta property="og:description" content="">
-    <meta property="og:article:tag" content="Docker"> 
+    <meta property="og:article:tag" content="CentOS"> <meta property="og:article:tag" content="Shadowsocks"> 
 
     
-        <meta property="article:published_time" content="Sun Oct 01 2017 16:25:26 GMT+0800">
-        <meta property="article:modified_time" content="Fri Jan 05 2018 22:00:55 GMT+0800">
+        <meta property="article:published_time" content="Tue Sep 12 2017 15:49:08 GMT+0800">
+        <meta property="article:modified_time" content="Thu Jan 04 2018 00:17:04 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -254,7 +254,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://404-notfound.com/2017/10/01/Docker-pull镜像失败的解决方案/index.html" />
+        <link rel="canonical" href="http://404-notfound.com/CentOS命令行使用SS代理的方法/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -266,10 +266,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://404-notfound.com/2017/10/01/Docker-pull镜像失败的解决方案/index.html",
-    "headline": "Docker pull镜像失败的解决方案",
-    "datePublished": "Sun Oct 01 2017 16:25:26 GMT+0800",
-    "dateModified": "Fri Jan 05 2018 22:00:55 GMT+0800",
+    "mainEntityOfPage": "http://404-notfound.com/CentOS命令行使用SS代理的方法/index.html",
+    "headline": "CentOS命令行使用SS代理的方法",
+    "datePublished": "Tue Sep 12 2017 15:49:08 GMT+0800",
+    "dateModified": "Thu Jan 04 2018 00:17:04 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "CX1ng",
@@ -287,7 +287,7 @@
             "url": "/img/favicon.ico"
         }
     },
-    "keywords": ",Dockergolang backend",
+    "keywords": ",CentOS,Shadowsocksgolang backend",
     "description": "",
 }
 </script>
@@ -370,7 +370,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#背景"><span class="post-toc-number">1.</span> <span class="post-toc-text">背景</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#解决方案"><span class="post-toc-number">2.</span> <span class="post-toc-text">解决方案</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#使用代理进行下载"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">使用代理进行下载</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#使用国内其他平台的镜像"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">使用国内其他平台的镜像</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#配置镜像加速"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">配置镜像加速</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#背景"><span class="post-toc-number">1.</span> <span class="post-toc-text">背景:</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装Shadowsocks"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装Shadowsocks:</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装provixy"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装provixy:</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#设置http-https-ftp代理"><span class="post-toc-number">4.</span> <span class="post-toc-text">设置http/https/ftp代理:</span></a></li></ol>
     </ul>
     
 
@@ -402,7 +402,7 @@
         
     
             <p class="article-headline-p">
-                Docker pull镜像失败的解决方案
+                CentOS命令行使用SS代理的方法
             </p>
         </div>
 
@@ -421,7 +421,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>CX1ng</strong>
-        <span>10月 01, 2017</span>
+        <span>9月 12, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -445,7 +445,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Docker/">Docker</a>
+        <a class="post_tag-link" href="/tags/CentOS/">CentOS</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Shadowsocks/">Shadowsocks</a>
     </ul>
     
 
@@ -473,7 +473,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Docker pull镜像失败的解决方案&url=http://404-notfound.com/2017/10/01/Docker-pull镜像失败的解决方案/index.html&pic=http://404-notfound.com/img/favicon.ico&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=CentOS命令行使用SS代理的方法&url=http://404-notfound.com/CentOS命令行使用SS代理的方法/index.html&pic=http://404-notfound.com/img/favicon.ico&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -482,7 +482,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Docker pull镜像失败的解决方案&url=http://404-notfound.com/2017/10/01/Docker-pull镜像失败的解决方案/index.html&via=CX1ng" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=CentOS命令行使用SS代理的方法&url=http://404-notfound.com/CentOS命令行使用SS代理的方法/index.html&via=CX1ng" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -491,7 +491,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://404-notfound.com/2017/10/01/Docker-pull镜像失败的解决方案/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://404-notfound.com/CentOS命令行使用SS代理的方法/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -500,7 +500,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://404-notfound.com/2017/10/01/Docker-pull镜像失败的解决方案/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://404-notfound.com/CentOS命令行使用SS代理的方法/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -525,17 +525,48 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><p>　　使用Docker从官方仓库拉取镜像时失败。</p>
-<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><h5 id="使用代理进行下载"><a href="#使用代理进行下载" class="headerlink" title="使用代理进行下载"></a>使用代理进行下载</h5><p>　　我在使用SS进行代理后，从官方仓库拉取镜像依然失败，可能是SS设置的超时值太低而访问docker hub速度太慢，无法正常下载。</p>
-<h5 id="使用国内其他平台的镜像"><a href="#使用国内其他平台的镜像" class="headerlink" title="使用国内其他平台的镜像"></a>使用国内其他平台的镜像</h5><p>　　使用<a href="https://www.daocloud.io/" target="_blank" rel="noopener">daocloud.io</a>查找替换的镜像源</p>
-<p>　　先登录<a href="https://www.daocloud.io/" target="_blank" rel="noopener">daocloud.io</a>，点击左侧<em>发现镜像</em>，然后在搜索框中输入要查找的镜像名称，如：“<em>rabbitmq</em>”<br>　　<img src="../images/daocloud1.png" alt="daocloud1"></p>
-<p>　　点击进入详情页，复制上方的镜像地址<br>　　<img src="../images/daocloud2.png" alt="daocloud2"></p>
-<p>　　使用docker pull进行下载<br>　　<img src="../images/daocloud3.png" alt="daocloud3"></p>
-<h5 id="配置镜像加速"><a href="#配置镜像加速" class="headerlink" title="配置镜像加速"></a>配置镜像加速</h5><p>　　CentOS7下，配置文件/etc/docker/daemon.json，</p>
+        <h4 id="背景"><a href="#背景" class="headerlink" title="背景:"></a>背景:</h4><p>　　使用Golang的go get命令下载三方包时发现官方的包被墙无法正常下载。</p>
+<p>　　针对无法正常使用go get下载的官方包可以使用以下几种方法进行代替：</p>
+<ul>
+<li>使用<a href="http://github.com" target="_blank" rel="noopener">github</a>资源进行替代 </li>
+<li>在<a href="https://gopm.io" target="_blank" rel="noopener">gopm.io</a>下载</li>
+<li>搭梯子直接用go get下载</li>
+</ul>
+<h4 id="安装Shadowsocks"><a href="#安装Shadowsocks" class="headerlink" title="安装Shadowsocks:"></a>安装Shadowsocks:</h4><pre><code>yum update
+
+yum install python-pip
+
+pip install shadowsocks
+</code></pre><p>　　安装成功后会在/usr/bin目录下发现ssserver和sslocal两个可执行脚本。</p>
+<p>　　<em>ssserver</em>代表服务端用的，<em>sslocal</em>是客户端用的脚本，在这里我们使用<em>sslocal</em>进行工作。</p>
+<p>　　为了方便使用在/etc/下创建sslocal启动的配置文件shadowsocks.json</p>
 <pre><code>{
-&quot;registry-mirrors&quot;: [&quot;https://registry.docker-cn.com&quot;]
+&quot;server&quot;:&quot;server_ip&quot;,    
+&quot;server_port&quot;:server_port,   
+&quot;local_address&quot;: &quot;127.0.0.1&quot;,
+&quot;local_port&quot;:1080,
+&quot;password&quot;:&quot;password&quot;,
+&quot;timeout&quot;:300,
+&quot;method&quot;:&quot;rc4-md5&quot;,
+&quot;fast_open&quot;: false,
+&quot;workers&quot;: 1
 }
-</code></pre><p>　　重启docker daemon <code>sudo service docker restart</code> 这样会使用Docker中国官方的镜像加速进行访问</p>
+</code></pre><p>　　启动命令<code>nohup sslocal -c /etc/shadowsocks.json /dev/null 2&gt;&amp;1</code>,该启动方式会让ss以客户端模式在后台运行，相关配置读取/etc/shadowsocks.json文件，输出会进行丢弃。</p>
+<p>　　使用命令<code>netstat -ant | grep 1080</code>查看本地映射端口是否打开，<code>1080</code>是你在配置文件中local_port配置的值。</p>
+<h4 id="安装provixy"><a href="#安装provixy" class="headerlink" title="安装provixy:"></a>安装provixy:</h4><p>　　ss启动后还不支持命令行下的翻墙，需要使用provixy将命令行下的http请求转发到ss。</p>
+<p>　　使用<code>yum install privoxy</code>安装privoxy，修改配置文件/etc/privoxy/config文件，添加<code>forward-socks5 / 127.0.0.1:1080 .</code>，同时确保<code>listen-address  127.0.0.1:8118</code>没有被注释。</p>
+<p>　　使用命令<code>service privoxy start</code>启动privoxy，命令<code>service privoxy status</code>查看privoxy是否正常启动。</p>
+<h4 id="设置http-https-ftp代理"><a href="#设置http-https-ftp代理" class="headerlink" title="设置http/https/ftp代理:"></a>设置http/https/ftp代理:</h4><p>　　修改/etc/profile，增加配置语句</p>
+<pre><code>export http_proxy=http://127.0.0.1:8118
+export https_proxy=http://127.0.0.1:8118
+export ftp_proxy=http://127.0.0.1:8118
+</code></pre><p>　　<code>127.0.0.1:8118</code>是<code>/etc/privoxy/config</code>中<code>listen-address</code>字段配置的值。</p>
+<p>　　使用<code>source /etc/profile</code>命令使配置立即生效。这时就可以使用go get进行包的下载了。</p>
+<p>　　ps：不使用时将/etc/profile的那三条语句注释掉，节省流量。</p>
+<p><strong>5.开机启动：</strong></p>
+<p>　　配置ss开机启动：在<code>/etc/rc.local</code>中增加启动命令命令<code>su - username -c &quot;nohup sslocal -c /etc/shadowsocks.json /dev/null 2&gt;&amp;1 &amp;&quot;</code></p>
+<p>　　配置privoxy开机启动：使用命令<code>systemctl enable privoxy.service</code></p>
+<p>　　http/https代理：在要使用时，直接执行命令<code>source /etc/profile</code></p>
 
         
                 <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
@@ -544,7 +575,7 @@
                             本文使用<a href=https://creativecommons.org/licenses/by-nc-sa/4.0/"">CC BY-NA-SA 4.0</a>协议许可
                         </strong>
                         <br>
-                        <strong>本文链接：</strong><a href="http://404-notfound.com/2017/10/01/Docker-pull镜像失败的解决方案/">http://404-notfound.com/2017/10/01/Docker-pull镜像失败的解决方案/</a>
+                        <strong>本文链接：</strong><a href="http://404-notfound.com/CentOS命令行使用SS代理的方法/">http://404-notfound.com/CentOS命令行使用SS代理的方法/</a>
                     </p>
                 </blockquote>
         
@@ -600,8 +631,8 @@
 
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://404-notfound.com/2017/10/01/Docker-pull镜像失败的解决方案/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://404-notfound.com/2017/10/01/Docker-pull镜像失败的解决方案/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://404-notfound.com/CentOS命令行使用SS代理的方法/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://404-notfound.com/CentOS命令行使用SS代理的方法/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 
@@ -650,7 +681,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/10/06/Dockerfile详解/" id="post_nav-newer" class="prev-content">
+        <a href="/Docker-pull镜像失败的解决方案/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -663,14 +694,6 @@
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
-    
-        <a href="/2017/09/12/CentOS命令行使用SS代理的方法/" id="post_nav-older" class="next-content">
-            旧篇
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
     
 </nav>
 

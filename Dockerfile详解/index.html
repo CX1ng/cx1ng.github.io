@@ -45,7 +45,7 @@
     
     <title>
         
-            CentOS命令行使用SS代理的方法 | 
+            Dockerfile详解 | 
         
         404 NotFound
     </title>
@@ -56,7 +56,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="golang backend,CentOS,Shadowsocks">
+    <meta name="keywords" content="golang backend,Docker">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -222,7 +222,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="404 NotFound">
-    <meta name="msapplication-starturl" content="http://404-notfound.com/2017/09/12/CentOS命令行使用SS代理的方法/">
+    <meta name="msapplication-starturl" content="http://404-notfound.com/Dockerfile详解/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="404 NotFound">
@@ -237,16 +237,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://404-notfound.com/2017/09/12/CentOS命令行使用SS代理的方法/">
+    <meta property="og:url" content="http://404-notfound.com/Dockerfile详解/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="CentOS命令行使用SS代理的方法 | 404 NotFound">
+    <meta property="og:title" content="Dockerfile详解 | 404 NotFound">
     <meta property="og:image" content="/img/favicon.ico">
     <meta property="og:description" content="">
-    <meta property="og:article:tag" content="CentOS"> <meta property="og:article:tag" content="Shadowsocks"> 
+    <meta property="og:article:tag" content="Docker"> 
 
     
-        <meta property="article:published_time" content="Tue Sep 12 2017 15:49:08 GMT+0800">
-        <meta property="article:modified_time" content="Thu Jan 04 2018 00:17:04 GMT+0800">
+        <meta property="article:published_time" content="Fri Oct 06 2017 04:25:38 GMT+0800">
+        <meta property="article:modified_time" content="Thu Jan 04 2018 00:17:41 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -254,7 +254,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://404-notfound.com/2017/09/12/CentOS命令行使用SS代理的方法/index.html" />
+        <link rel="canonical" href="http://404-notfound.com/Dockerfile详解/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -266,10 +266,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://404-notfound.com/2017/09/12/CentOS命令行使用SS代理的方法/index.html",
-    "headline": "CentOS命令行使用SS代理的方法",
-    "datePublished": "Tue Sep 12 2017 15:49:08 GMT+0800",
-    "dateModified": "Thu Jan 04 2018 00:17:04 GMT+0800",
+    "mainEntityOfPage": "http://404-notfound.com/Dockerfile详解/index.html",
+    "headline": "Dockerfile详解",
+    "datePublished": "Fri Oct 06 2017 04:25:38 GMT+0800",
+    "dateModified": "Thu Jan 04 2018 00:17:41 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "CX1ng",
@@ -287,7 +287,7 @@
             "url": "/img/favicon.ico"
         }
     },
-    "keywords": ",CentOS,Shadowsocksgolang backend",
+    "keywords": ",Dockergolang backend",
     "description": "",
 }
 </script>
@@ -370,7 +370,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#背景"><span class="post-toc-number">1.</span> <span class="post-toc-text">背景:</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装Shadowsocks"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装Shadowsocks:</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装provixy"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装provixy:</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#设置http-https-ftp代理"><span class="post-toc-number">4.</span> <span class="post-toc-text">设置http/https/ftp代理:</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">概述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Dockerfile语法"><span class="post-toc-number">2.</span> <span class="post-toc-text">Dockerfile语法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#FROM"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">FROM</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#MAINTAINER"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">MAINTAINER</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#RUN"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">RUN</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#EXPOSE"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">EXPOSE</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#CMD"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">CMD</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#ENTRYPOINT"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">ENTRYPOINT</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#ENV"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">ENV</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#ADD"><span class="post-toc-number">2.8.</span> <span class="post-toc-text">ADD</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#COPY"><span class="post-toc-number">2.9.</span> <span class="post-toc-text">COPY</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#VOLUME"><span class="post-toc-number">2.10.</span> <span class="post-toc-text">VOLUME</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#USER"><span class="post-toc-number">2.11.</span> <span class="post-toc-text">USER</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#WORKDIR"><span class="post-toc-number">2.12.</span> <span class="post-toc-text">WORKDIR</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#ONBUILD"><span class="post-toc-number">2.13.</span> <span class="post-toc-text">ONBUILD</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -402,7 +402,7 @@
         
     
             <p class="article-headline-p">
-                CentOS命令行使用SS代理的方法
+                Dockerfile详解
             </p>
         </div>
 
@@ -421,7 +421,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>CX1ng</strong>
-        <span>9月 12, 2017</span>
+        <span>10月 06, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -445,7 +445,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/CentOS/">CentOS</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Shadowsocks/">Shadowsocks</a>
+        <a class="post_tag-link" href="/tags/Docker/">Docker</a>
     </ul>
     
 
@@ -473,7 +473,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=CentOS命令行使用SS代理的方法&url=http://404-notfound.com/2017/09/12/CentOS命令行使用SS代理的方法/index.html&pic=http://404-notfound.com/img/favicon.ico&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Dockerfile详解&url=http://404-notfound.com/Dockerfile详解/index.html&pic=http://404-notfound.com/img/favicon.ico&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -482,7 +482,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=CentOS命令行使用SS代理的方法&url=http://404-notfound.com/2017/09/12/CentOS命令行使用SS代理的方法/index.html&via=CX1ng" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Dockerfile详解&url=http://404-notfound.com/Dockerfile详解/index.html&via=CX1ng" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -491,7 +491,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://404-notfound.com/2017/09/12/CentOS命令行使用SS代理的方法/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://404-notfound.com/Dockerfile详解/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -500,7 +500,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://404-notfound.com/2017/09/12/CentOS命令行使用SS代理的方法/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://404-notfound.com/Dockerfile详解/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -525,48 +525,54 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h4 id="背景"><a href="#背景" class="headerlink" title="背景:"></a>背景:</h4><p>　　使用Golang的go get命令下载三方包时发现官方的包被墙无法正常下载。</p>
-<p>　　针对无法正常使用go get下载的官方包可以使用以下几种方法进行代替：</p>
+        <h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>　　Docker镜像包含两种常用的构造方式:</p>
+<blockquote>
+<ol>
+<li>docker commit – 通过对已经存在的容器修改后提交生成镜像</li>
+<li>docker build  – 通过Dockerfile文件生成镜像</li>
+</ol>
+</blockquote>
+<p>　　相较于第一种方式，第二种通过编写<code>Dockerfile</code>文件，将生成镜像的步骤固化下来，使得创建镜像的过程更加灵活且可以被重复执行，更加具有实用价值。</p>
+<h4 id="Dockerfile语法"><a href="#Dockerfile语法" class="headerlink" title="Dockerfile语法"></a>Dockerfile语法</h4><h5 id="FROM"><a href="#FROM" class="headerlink" title="FROM"></a>FROM</h5><p>　　<code>FROM</code>语法用来指明构建镜像的基础镜像，一般位于Dockerfile文件的开头。如果本地镜像库不包含该镜像，将会自动通过<code>docker pull</code>命令进行下载。  </p>
+<pre><code>FROM centos:7
+</code></pre><p>　　ps:可以在一个<code>Dockerfile</code>文件中使用多条<code>FROM</code>语句，用于生成多个镜像。</p>
+<h5 id="MAINTAINER"><a href="#MAINTAINER" class="headerlink" title="MAINTAINER"></a>MAINTAINER</h5><p>　　该命令用于指明<code>Dockerfile</code>的维护者信息</p>
+<pre><code>MAINTAINER cx1ng leec1ng@gamil.com
+</code></pre><h5 id="RUN"><a href="#RUN" class="headerlink" title="RUN"></a>RUN</h5><p>　　<code>RUN</code>命令用于在父镜像之上添加新的镜像层，通常用于安装软件。</p>
+<pre><code>RUN yum install mysql
+</code></pre><h5 id="EXPOSE"><a href="#EXPOSE" class="headerlink" title="EXPOSE"></a>EXPOSE</h5><p>　　<code>EXPOSE</code>命令用来指明容器运行时对外开放的端口。</p>
+<pre><code>EXPOSE 3306
+</code></pre><p>　　在容器运行时，可以通过<code>-p</code>参数进行端口映射，使其可以通过宿主机的端口进行访问。</p>
+<pre><code>docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=12345 -d -p 3306:3306 mysql
+</code></pre><p>　　这样就可以通过宿主机的3306端口访问容器的3306端口。</p>
+<h5 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h5><p>　　<code>CMD</code>用来指明容器启动时的服务，可以被容器运行时的command参数覆盖。每个<code>Dockerfile</code>文件只有最后一个CMD命令会生效。当<code>Dockerfile</code>存在<code>ENTRYPOINT</code>时，该命令通常用于为<code>ENTRYPOINT</code>指定的服务提供参数.</p>
+<pre><code>CMD service mysqld start
+</code></pre><p>　　当<code>Dockerfile</code>存在<code>ENTRYPOINT</code>时，该命令通常用于为<code>ENTRYPOINT</code>指定的服务提供参数</p>
+<pre><code>CMD [&quot;param1&quot;,&quot;param2&quot;]
+</code></pre><h5 id="ENTRYPOINT"><a href="#ENTRYPOINT" class="headerlink" title="ENTRYPOINT"></a>ENTRYPOINT</h5><p>　　<code>ENTRYPOINT</code>用来指定容器运行时的入口，即运行时启动的服务。与<code>CMD</code>命令相同的是，当存在多个，只有最后一个会生效；不同的是，该命令不会被容器启动时指定的command覆盖</p>
+<pre><code>ENTRYPOINT service mysqld start
+</code></pre><h5 id="ENV"><a href="#ENV" class="headerlink" title="ENV"></a>ENV</h5><p>　　<code>ENV</code>命令用于配置容器运行时的环境变量，同时，会对<code>Dockerfile</code>中后续的<code>RUN</code>命令产生影响</p>
+<pre><code>ENV HOME /home/cx1ng/
+</code></pre><h5 id="ADD"><a href="#ADD" class="headerlink" title="ADD"></a>ADD</h5><p>　　将指定<code>&lt;src&gt;</code>复制到容器中的<code>&lt;dst&gt;</code>。</p>
 <ul>
-<li>使用<a href="http://github.com" target="_blank" rel="noopener">github</a>资源进行替代 </li>
-<li>在<a href="https://gopm.io" target="_blank" rel="noopener">gopm.io</a>下载</li>
-<li>搭梯子直接用go get下载</li>
+<li><code>&lt;src&gt;</code>除常规文件外，还可以是URL、压缩文件。如果是压缩文件则会自动解压缩。</li>
+<li><code>&lt;src&gt;</code>的路径可以是<code>Dockerfile</code>所在目录的一个相对路径。</li>
 </ul>
-<h4 id="安装Shadowsocks"><a href="#安装Shadowsocks" class="headerlink" title="安装Shadowsocks:"></a>安装Shadowsocks:</h4><pre><code>yum update
-
-yum install python-pip
-
-pip install shadowsocks
-</code></pre><p>　　安装成功后会在/usr/bin目录下发现ssserver和sslocal两个可执行脚本。</p>
-<p>　　<em>ssserver</em>代表服务端用的，<em>sslocal</em>是客户端用的脚本，在这里我们使用<em>sslocal</em>进行工作。</p>
-<p>　　为了方便使用在/etc/下创建sslocal启动的配置文件shadowsocks.json</p>
-<pre><code>{
-&quot;server&quot;:&quot;server_ip&quot;,    
-&quot;server_port&quot;:server_port,   
-&quot;local_address&quot;: &quot;127.0.0.1&quot;,
-&quot;local_port&quot;:1080,
-&quot;password&quot;:&quot;password&quot;,
-&quot;timeout&quot;:300,
-&quot;method&quot;:&quot;rc4-md5&quot;,
-&quot;fast_open&quot;: false,
-&quot;workers&quot;: 1
-}
-</code></pre><p>　　启动命令<code>nohup sslocal -c /etc/shadowsocks.json /dev/null 2&gt;&amp;1</code>,该启动方式会让ss以客户端模式在后台运行，相关配置读取/etc/shadowsocks.json文件，输出会进行丢弃。</p>
-<p>　　使用命令<code>netstat -ant | grep 1080</code>查看本地映射端口是否打开，<code>1080</code>是你在配置文件中local_port配置的值。</p>
-<h4 id="安装provixy"><a href="#安装provixy" class="headerlink" title="安装provixy:"></a>安装provixy:</h4><p>　　ss启动后还不支持命令行下的翻墙，需要使用provixy将命令行下的http请求转发到ss。</p>
-<p>　　使用<code>yum install privoxy</code>安装privoxy，修改配置文件/etc/privoxy/config文件，添加<code>forward-socks5 / 127.0.0.1:1080 .</code>，同时确保<code>listen-address  127.0.0.1:8118</code>没有被注释。</p>
-<p>　　使用命令<code>service privoxy start</code>启动privoxy，命令<code>service privoxy status</code>查看privoxy是否正常启动。</p>
-<h4 id="设置http-https-ftp代理"><a href="#设置http-https-ftp代理" class="headerlink" title="设置http/https/ftp代理:"></a>设置http/https/ftp代理:</h4><p>　　修改/etc/profile，增加配置语句</p>
-<pre><code>export http_proxy=http://127.0.0.1:8118
-export https_proxy=http://127.0.0.1:8118
-export ftp_proxy=http://127.0.0.1:8118
-</code></pre><p>　　<code>127.0.0.1:8118</code>是<code>/etc/privoxy/config</code>中<code>listen-address</code>字段配置的值。</p>
-<p>　　使用<code>source /etc/profile</code>命令使配置立即生效。这时就可以使用go get进行包的下载了。</p>
-<p>　　ps：不使用时将/etc/profile的那三条语句注释掉，节省流量。</p>
-<p><strong>5.开机启动：</strong></p>
-<p>　　配置ss开机启动：在<code>/etc/rc.local</code>中增加启动命令命令<code>su - username -c &quot;nohup sslocal -c /etc/shadowsocks.json /dev/null 2&gt;&amp;1 &amp;&quot;</code></p>
-<p>　　配置privoxy开机启动：使用命令<code>systemctl enable privoxy.service</code></p>
-<p>　　http/https代理：在要使用时，直接执行命令<code>source /etc/profile</code></p>
+<pre><code>ADD &lt;src&gt; &lt;dst&gt;
+</code></pre><h5 id="COPY"><a href="#COPY" class="headerlink" title="COPY"></a>COPY</h5><p>　　复制宿主机的<code>&lt;src&gt;</code>到容器的<code>&lt;dst&gt;</code>，<code>&lt;src&gt;</code>的路径必须是Dockerfile文件所在目录的相对路径。</p>
+<pre><code>COPY &lt;src&gt; &lt;dst&gt;
+</code></pre><h5 id="VOLUME"><a href="#VOLUME" class="headerlink" title="VOLUME"></a>VOLUME</h5><p>　　在容器中添加一个挂载点，但主机挂载目录是自动生成的。主机对应目录可以通过<code>docker inspect container_name/container_id</code>进行查看。</p>
+<pre><code>VOLUME [&quot;/data1&quot;,&quot;/data2&quot;]
+</code></pre><p>　　如果要指定主机的挂载目录，则需要在容器运行时通过<code>-v</code>参数指定挂载目录。</p>
+<pre><code>docker run -d -v /home/cx1ng/data:/data -e MYSQL_ROOT_PASSWORD=12345 mysql
+</code></pre><h5 id="USER"><a href="#USER" class="headerlink" title="USER"></a>USER</h5><p>　　<code>USER</code>命令用于指明容器运行时的用户。</p>
+<pre><code>USER cx1ng
+</code></pre><h5 id="WORKDIR"><a href="#WORKDIR" class="headerlink" title="WORKDIR"></a>WORKDIR</h5><p>　　为后续的指令（RUN、CMD、ENTRYPOINT）配置工作目录，如果路径是相对路径，则会基于之前命令指定的路径。</p>
+<pre><code>WORKDIR /home/cx1ng/
+</code></pre><h5 id="ONBUILD"><a href="#ONBUILD" class="headerlink" title="ONBUILD"></a>ONBUILD</h5><p>　　当本镜像作为<code>Dockerfile</code>的基础镜像，会执行的命令</p>
+<blockquote>
+<p>更详细的请查看<a href="http://www.dockerinfo.net/dockerfile%E4%BB%8B%E7%BB%8D" target="_blank" rel="noopener">这里</a></p>
+</blockquote>
 
         
                 <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
@@ -575,7 +581,7 @@ export ftp_proxy=http://127.0.0.1:8118
                             本文使用<a href=https://creativecommons.org/licenses/by-nc-sa/4.0/"">CC BY-NA-SA 4.0</a>协议许可
                         </strong>
                         <br>
-                        <strong>本文链接：</strong><a href="http://404-notfound.com/2017/09/12/CentOS命令行使用SS代理的方法/">http://404-notfound.com/2017/09/12/CentOS命令行使用SS代理的方法/</a>
+                        <strong>本文链接：</strong><a href="http://404-notfound.com/Dockerfile详解/">http://404-notfound.com/Dockerfile详解/</a>
                     </p>
                 </blockquote>
         
@@ -631,8 +637,8 @@ export ftp_proxy=http://127.0.0.1:8118
 
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://404-notfound.com/2017/09/12/CentOS命令行使用SS代理的方法/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://404-notfound.com/2017/09/12/CentOS命令行使用SS代理的方法/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://404-notfound.com/Dockerfile详解/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://404-notfound.com/Dockerfile详解/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 
@@ -681,19 +687,19 @@ export ftp_proxy=http://127.0.0.1:8118
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/10/01/Docker-pull镜像失败的解决方案/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/Docker-pull镜像失败的解决方案/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
 
