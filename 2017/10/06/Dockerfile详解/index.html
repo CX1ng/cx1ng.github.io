@@ -45,7 +45,7 @@
     
     <title>
         
-            timeline | 
+            Dockerfile详解 | 
         
         404 NotFound
     </title>
@@ -56,7 +56,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="golang backend">
+    <meta name="keywords" content="golang backend,Docker">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -83,6 +83,9 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/Tomorrow.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
             
         
 
@@ -219,7 +222,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="404 NotFound">
-    <meta name="msapplication-starturl" content="http://404-notfound.com/timeline/">
+    <meta name="msapplication-starturl" content="http://404-notfound.com/2017/10/06/Dockerfile详解/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="404 NotFound">
@@ -234,13 +237,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://404-notfound.com/timeline/">
+    <meta property="og:url" content="http://404-notfound.com/2017/10/06/Dockerfile详解/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="timeline | 404 NotFound">
+    <meta property="og:title" content="Dockerfile详解 | 404 NotFound">
     <meta property="og:image" content="/img/favicon.ico">
     <meta property="og:description" content="">
-    
+    <meta property="og:article:tag" content="Docker"> 
 
+    
+        <meta property="article:published_time" content="Fri Oct 06 2017 04:25:38 GMT+0800">
+        <meta property="article:modified_time" content="Thu Jan 04 2018 00:17:41 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -248,13 +254,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://404-notfound.com/timeline/index.html" />
+        <link rel="canonical" href="http://404-notfound.com/2017/10/06/Dockerfile详解/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://404-notfound.com/2017/10/06/Dockerfile详解/index.html",
+    "headline": "Dockerfile详解",
+    "datePublished": "Fri Oct 06 2017 04:25:38 GMT+0800",
+    "dateModified": "Thu Jan 04 2018 00:17:41 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "CX1ng",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.jpg"
+        },
+        "description": "我见青山多妩媚，料青山、见我应如是。"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "404 NotFound",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.ico"
+        }
+    },
+    "keywords": ",Dockergolang backend",
+    "description": "",
+}
+</script>
 
 
     
@@ -307,500 +343,368 @@
 
                     <!-- Post TOC -->
 
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">概述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Dockerfile语法"><span class="post-toc-number">2.</span> <span class="post-toc-text">Dockerfile语法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#FROM"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">FROM</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#MAINTAINER"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">MAINTAINER</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#RUN"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">RUN</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#EXPOSE"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">EXPOSE</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#CMD"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">CMD</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#ENTRYPOINT"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">ENTRYPOINT</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#ENV"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">ENV</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#ADD"><span class="post-toc-number">2.8.</span> <span class="post-toc-text">ADD</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#COPY"><span class="post-toc-number">2.9.</span> <span class="post-toc-text">COPY</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#VOLUME"><span class="post-toc-number">2.10.</span> <span class="post-toc-text">VOLUME</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#USER"><span class="post-toc-number">2.11.</span> <span class="post-toc-text">USER</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#WORKDIR"><span class="post-toc-number">2.12.</span> <span class="post-toc-text">WORKDIR</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#ONBUILD"><span class="post-toc-number">2.13.</span> <span class="post-toc-text">ONBUILD</span></a></li></ol></li></ol>
+    </ul>
+    
+
+
+
 
 <!-- Layouts -->
 
-    <!-- Single Timeline Page -->
-    <style>
-	.md-container {
-		width: 90%;
-		max-width: 1170px;
-		margin: 0 auto;
-	}
-	.md-container::after {
-		content: '';
-		display: table;
-		clear: both;
-	}
-	#md-timeline {
-		position: relative;
-		padding: 2em 0;
-		margin-top: 2em;
-		margin-bottom: 2em;
-	}
-	@media screen and (max-device-width:480px){
-		#md-timeline {
-			margin-top: 6em;
-		}
-	}
-	#md-timeline::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 18px;
-		height: 100%;
-		width: 2px;
-		background: #d7e4ed;
-	}
-	.md-timeline-title {
-		font-size: 20px;
-		line-height: 24px;
-	}
-	.md-timeline-content a {
-		text-decoration: none;
-	}
-	.md-timeline-info {
-		height: 20px;
-		width: 100%;
-		margin: 10px 0px;
-	}
-	.md-timeline-info-span {
-		float: right;
-		margin-right: 10px;
-		text-align: right;
-	}
-	.md-timeline-excerpt {
-	    	clear: right; 
-	}
-	@media only screen and (min-width: 1170px) {
-		#md-timeline {
-			margin-top: 3em;
-			margin-bottom: 3em;
-		}
-		#md-timeline::before {
-			left: 50%;
-			margin-left: -2px;
-		}
-	}
-	.md-timeline-block {
-		position: relative;
-		margin: 2em 0;
-	}
-	.md-timeline-block:after {
-		content: "";
-		display: table;
-		clear: both;
-	}
-	.md-timeline-block:first-child {
-		margin-top: 0;
-	}
-	.md-timeline-block:last-child {
-		margin-bottom: 0;
-	}
-	@media only screen and (min-width: 1170px) {
-		.md-timeline-block {
-			margin: 4em 0;
-		}
-		.md-timeline-block:first-child {
-			margin-top: 0;
-		}
-		.md-timeline-block:last-child {
-			margin-bottom: 0;
-		}
-	}
-	.md-timeline-date {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 60px;
-		height: 40px;
-		border-radius: box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
-	}
-	.md-timeline-date.blue {
-		background: #0D395F;
-		-webkit-box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
-		-moz-box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
-		box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
-	}
-	@media only screen and (min-width: 1170px) {
-		.md-timeline-date {
-			width: 60px;
-			height: 60px;
-			left: 50%;
-			margin-left: -30px;
-			/* Force Hardware Acceleration in WebKit */
-			-webkit-transform: translateZ(0);
-			-webkit-backface-visibility: hidden;
-		}
-		.cssanimations .md-timeline-date.is-hidden {
-			visibility: hidden;
-		}
-		.cssanimations .md-timeline-date.bounce-in {
-			visibility: visible;
-			-webkit-animation: md-bounce-1 0.6s;
-			-moz-animation: md-bounce-1 0.6s;
-			animation: md-bounce-1 0.6s;
-		}
-	}
-	@-webkit-keyframes md-bounce-1 {
-		0% {
-			opacity: 0;
-			-webkit-transform: scale(0.5);
-		}
-		60% {
-			opacity: 1;
-			-webkit-transform: scale(1.2);
-		}
-		100% {
-			-webkit-transform: scale(1);
-		}
-	}
-	@-moz-keyframes md-bounce-1 {
-		0% {
-			opacity: 0;
-			-moz-transform: scale(0.5);
-		}
-		60% {
-			opacity: 1;
-			-moz-transform: scale(1.2);
-		}
-		100% {
-			-moz-transform: scale(1);
-		}
-	}
-	@keyframes md-bounce-1 {
-		0% {
-			opacity: 0;
-			-webkit-transform: scale(0.5);
-			-moz-transform: scale(0.5);
-			-ms-transform: scale(0.5);
-			-o-transform: scale(0.5);
-			transform: scale(0.5);
-		}
-		60% {
-			opacity: 1;
-			-webkit-transform: scale(1.2);
-			-moz-transform: scale(1.2);
-			-ms-transform: scale(1.2);
-			-o-transform: scale(1.2);
-			transform: scale(1.2);
-		}
-		100% {
-			-webkit-transform: scale(1);
-			-moz-transform: scale(1);
-			-ms-transform: scale(1);
-			-o-transform: scale(1);
-			transform: scale(1);
-		}
-	}
-	.md-timeline-content {
-		position: relative;
-		margin-left: 60px;
-		background: white;
-		padding: 1em;
-		-webkit-box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
-		-moz-box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
-		box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
-	}
-	.md-timeline-content:after {
-		content: "";
-		display: table;
-		clear: both;
-	}
-	.md-timeline-content h2 {
-		color: #303e49;
-	}
-	.md-timeline-content p, .md-timeline-content .md-read-more, .md-timeline-content .md-date {
-		font-size: 13px;
-		font-size: 0.8125rem;
-	}
-	.md-timeline-content .md-read-more, .md-timeline-content .md-date {
-		display: inline-block;
-	}
-	.md-timeline-content p {
-		margin: 1em 0;
-		line-height: 1.6;
-	}
-	.md-timeline-content .md-read-more {
-		float: right;
-		padding: .8em 1em;
-		background: #acb7c0;
-		color: white;
-		border-radius: 0.25em;
-	}
-	.md-date {
-		color: white;
-		text-align: center;
-	}
-	.no-touch .md-timeline-content .md-read-more:hover {
-		background-color: #bac4cb;
-	}
-	.md-timeline-content::before {
-		content: '';
-		position: absolute;
-		top: 16px;
-		right: 100%;
-		height: 0;
-		width: 0;
-		border: 7px solid transparent;
-		border-right: 7px solid white;
-	}
-	@media only screen and (min-width: 768px) {
-		.md-timeline-content h2 {
-			font-size: 20px;
-			font-size: 1.25rem;
-		}
-		.md-timeline-content p {
-			font-size: 16px;
-			font-size: 1rem;
-		}
-		.md-timeline-content .md-read-more {
-			font-size: 14px;
-			font-size: 0.875rem;
-		}
-	}
-	@media only screen and (min-width: 1170px) {
-		.md-date {
-			text-align: center;
-			margin-top: 10px;
-			line-height: 20px;
-		}
-		.md-timeline-content {
-			margin-left: 0;
-			padding: 1.6em;
-			width: 45%;
-		}
-		.md-timeline-content::before {
-			top: 24px;
-			left: 100%;
-			border-color: transparent;
-			border-left-color: white;
-		}
-		.md-timeline-content .md-read-more {
-			float: left;
-		}
-		.md-timeline-block:nth-child(even) .md-timeline-content {
-			float: right;
-		}
-		.md-timeline-block:nth-child(even) .md-timeline-content::before {
-			top: 24px;
-			left: auto;
-			right: 100%;
-			border-color: transparent;
-			border-right-color: white;
-		}
-		.md-timeline-block:nth-child(even) .md-timeline-content .md-read-more {
-			float: right;
-		}
-		.cssanimations .md-timeline-content.is-hidden {
-			visibility: hidden;
-		}
-		.cssanimations .md-timeline-content.bounce-in {
-			visibility: visible;
-			-webkit-animation: md-bounce-2 0.6s;
-			-moz-animation: md-bounce-2 0.6s;
-			animation: md-bounce-2 0.6s;
-		}
-	}
-	@media only screen and (min-width: 1170px) {
-		/* inverse bounce effect on even content blocks */
-		.cssanimations .md-timeline-block:nth-child(even) .md-timeline-content.bounce-in {
-			-webkit-animation: md-bounce-2-inverse 0.6s;
-			-moz-animation: md-bounce-2-inverse 0.6s;
-			animation: md-bounce-2-inverse 0.6s;
-		}
-	}
-	@-webkit-keyframes md-bounce-2 {
-		0% {
-			opacity: 0;
-			-webkit-transform: translateX(-100px);
-		}
-		60% {
-			opacity: 1;
-			-webkit-transform: translateX(20px);
-		}
-		100% {
-			-webkit-transform: translateX(0);
-		}
-	}
-	@-moz-keyframes md-bounce-2 {
-		0% {
-			opacity: 0;
-			-moz-transform: translateX(-100px);
-		}
-		60% {
-			opacity: 1;
-			-moz-transform: translateX(20px);
-		}
-		100% {
-			-moz-transform: translateX(0);
-		}
-	}
-	@keyframes md-bounce-2 {
-		0% {
-			opacity: 0;
-			-webkit-transform: translateX(-100px);
-			-moz-transform: translateX(-100px);
-			-ms-transform: translateX(-100px);
-			-o-transform: translateX(-100px);
-			transform: translateX(-100px);
-		}
-		60% {
-			opacity: 1;
-			-webkit-transform: translateX(20px);
-			-moz-transform: translateX(20px);
-			-ms-transform: translateX(20px);
-			-o-transform: translateX(20px);
-			transform: translateX(20px);
-		}
-		100% {
-			-webkit-transform: translateX(0);
-			-moz-transform: translateX(0);
-			-ms-transform: translateX(0);
-			-o-transform: translateX(0);
-			transform: translateX(0);
-		}
-	}
-	@-webkit-keyframes md-bounce-2-inverse {
-		0% {
-			opacity: 0;
-			-webkit-transform: translateX(100px);
-		}
-		60% {
-			opacity: 1;
-			-webkit-transform: translateX(-20px);
-		}
-		100% {
-			-webkit-transform: translateX(0);
-		}
-	}
-	@-moz-keyframes md-bounce-2-inverse {
-		0% {
-			opacity: 0;
-			-moz-transform: translateX(100px);
-		}
-		60% {
-			opacity: 1;
-			-moz-transform: translateX(-20px);
-		}
-		100% {
-			-moz-transform: translateX(0);
-		}
-	}
-	@keyframes md-bounce-2-inverse {
-		0% {
-			opacity: 0;
-			-webkit-transform: translateX(100px);
-			-moz-transform: translateX(100px);
-			-ms-transform: translateX(100px);
-			-o-transform: translateX(100px);
-			transform: translateX(100px);
-		}
-		60% {
-			opacity: 1;
-			-webkit-transform: translateX(-20px);
-			-moz-transform: translateX(-20px);
-			-ms-transform: translateX(-20px);
-			-o-transform: translateX(-20px);
-			transform: translateX(-20px);
-		}
-		100% {
-			-webkit-transform: translateX(0);
-			-moz-transform: translateX(0);
-			-ms-transform: translateX(0);
-			-o-transform: translateX(0);
-			transform: translateX(0);
-		}
-	}
-</style>
+    <!-- Post Module -->
+    <div class="material-post_container">
 
-<section id="md-timeline" class="md-container">
-   	   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">10月 06 2017</div>
-                		</div>
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2017/10/06/Dockerfile详解/">Dockerfile详解</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							<a class="category-link" href="/categories/工具使用/">工具使用</a>
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							<a class="tag-link" href="/tags/Docker/">Docker</a>
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							概述　　Docker镜像包含两种常用的构造方式:
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-
-docker commit – 通过对已经存在的容器修改后提交生成镜像
-docker build  – 通过Dockerfile文件生成镜...
-						...
-					</p>
-                    		</div>
-			</div>	
-   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">10月 01 2017</div>
-                		</div>
-
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2017/10/01/Docker-pull镜像失败的解决方案/">Docker pull镜像失败的解决方案</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							<a class="category-link" href="/categories/工具使用/">工具使用</a>
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							<a class="tag-link" href="/tags/Docker/">Docker</a>
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							背景　　使用Docker从官方仓库拉取镜像时失败。
-解决方案
-						...
-					</p>
-                    		</div>
-			</div>	
-   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">9月 12 2017</div>
-                		</div>
-
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2017/09/12/CentOS命令行使用SS代理的方法/">CentOS命令行使用SS代理的方法</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							<a class="category-link" href="/categories/工具使用/">工具使用</a>
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							<a class="tag-link" href="/tags/CentOS/">CentOS</a>, <a class="tag-link" href="/tags/Shadowsocks/">Shadowsocks</a>
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							背景:　　使用Golang的go get命令下载三方包时发现官方的包被墙无法正常下载。
-　　针对无法正常使用go get下载的官方包可以使用以下几种方法进行代替：
-
-使用
-						...
-					</p>
-                    		</div>
-			</div>	
-   			   	  		
-   	</section>
-
-<script type="text/ls-javascript" id="page-timeline-script">
-    var adjustFooter = function() {
-        if( ($('#bottom').offset().top + $('#bottom').outerHeight() )<$(window).height() ) {
-            var footerBottom = $(window).height() - $('#bottom').outerHeight() - $('#bottom').offset().top;
-            $('#bottom').css('bottom', '-' + footerBottom + 'px');
-        }
-    };
-    $(document).ready(function() {
-        adjustFooter();
-    });
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                Dockerfile详解
+            </p>
+        </div>
 
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>CX1ng</strong>
+        <span>10月 06, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Docker/">Docker</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Dockerfile详解&url=http://404-notfound.com/2017/10/06/Dockerfile详解/index.html&pic=http://404-notfound.com/img/favicon.ico&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Dockerfile详解&url=http://404-notfound.com/2017/10/06/Dockerfile详解/index.html&via=CX1ng" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://404-notfound.com/2017/10/06/Dockerfile详解/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://404-notfound.com/2017/10/06/Dockerfile详解/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>　　Docker镜像包含两种常用的构造方式:</p>
+<blockquote>
+<ol>
+<li>docker commit – 通过对已经存在的容器修改后提交生成镜像</li>
+<li>docker build  – 通过Dockerfile文件生成镜像</li>
+</ol>
+</blockquote>
+<p>　　相较于第一种方式，第二种通过编写<code>Dockerfile</code>文件，将生成镜像的步骤固化下来，使得创建镜像的过程更加灵活且可以被重复执行，更加具有实用价值。</p>
+<h4 id="Dockerfile语法"><a href="#Dockerfile语法" class="headerlink" title="Dockerfile语法"></a>Dockerfile语法</h4><h5 id="FROM"><a href="#FROM" class="headerlink" title="FROM"></a>FROM</h5><p>　　<code>FROM</code>语法用来指明构建镜像的基础镜像，一般位于Dockerfile文件的开头。如果本地镜像库不包含该镜像，将会自动通过<code>docker pull</code>命令进行下载。  </p>
+<pre><code>FROM centos:7
+</code></pre><p>　　ps:可以在一个<code>Dockerfile</code>文件中使用多条<code>FROM</code>语句，用于生成多个镜像。</p>
+<h5 id="MAINTAINER"><a href="#MAINTAINER" class="headerlink" title="MAINTAINER"></a>MAINTAINER</h5><p>　　该命令用于指明<code>Dockerfile</code>的维护者信息</p>
+<pre><code>MAINTAINER cx1ng leec1ng@gamil.com
+</code></pre><h5 id="RUN"><a href="#RUN" class="headerlink" title="RUN"></a>RUN</h5><p>　　<code>RUN</code>命令用于在父镜像之上添加新的镜像层，通常用于安装软件。</p>
+<pre><code>RUN yum install mysql
+</code></pre><h5 id="EXPOSE"><a href="#EXPOSE" class="headerlink" title="EXPOSE"></a>EXPOSE</h5><p>　　<code>EXPOSE</code>命令用来指明容器运行时对外开放的端口。</p>
+<pre><code>EXPOSE 3306
+</code></pre><p>　　在容器运行时，可以通过<code>-p</code>参数进行端口映射，使其可以通过宿主机的端口进行访问。</p>
+<pre><code>docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=12345 -d -p 3306:3306 mysql
+</code></pre><p>　　这样就可以通过宿主机的3306端口访问容器的3306端口。</p>
+<h5 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h5><p>　　<code>CMD</code>用来指明容器启动时的服务，可以被容器运行时的command参数覆盖。每个<code>Dockerfile</code>文件只有最后一个CMD命令会生效。当<code>Dockerfile</code>存在<code>ENTRYPOINT</code>时，该命令通常用于为<code>ENTRYPOINT</code>指定的服务提供参数.</p>
+<pre><code>CMD service mysqld start
+</code></pre><p>　　当<code>Dockerfile</code>存在<code>ENTRYPOINT</code>时，该命令通常用于为<code>ENTRYPOINT</code>指定的服务提供参数</p>
+<pre><code>CMD [&quot;param1&quot;,&quot;param2&quot;]
+</code></pre><h5 id="ENTRYPOINT"><a href="#ENTRYPOINT" class="headerlink" title="ENTRYPOINT"></a>ENTRYPOINT</h5><p>　　<code>ENTRYPOINT</code>用来指定容器运行时的入口，即运行时启动的服务。与<code>CMD</code>命令相同的是，当存在多个，只有最后一个会生效；不同的是，该命令不会被容器启动时指定的command覆盖</p>
+<pre><code>ENTRYPOINT service mysqld start
+</code></pre><h5 id="ENV"><a href="#ENV" class="headerlink" title="ENV"></a>ENV</h5><p>　　<code>ENV</code>命令用于配置容器运行时的环境变量，同时，会对<code>Dockerfile</code>中后续的<code>RUN</code>命令产生影响</p>
+<pre><code>ENV HOME /home/cx1ng/
+</code></pre><h5 id="ADD"><a href="#ADD" class="headerlink" title="ADD"></a>ADD</h5><p>　　将指定<code>&lt;src&gt;</code>复制到容器中的<code>&lt;dst&gt;</code>。</p>
+<ul>
+<li><code>&lt;src&gt;</code>除常规文件外，还可以是URL、压缩文件。如果是压缩文件则会自动解压缩。</li>
+<li><code>&lt;src&gt;</code>的路径可以是<code>Dockerfile</code>所在目录的一个相对路径。</li>
+</ul>
+<pre><code>ADD &lt;src&gt; &lt;dst&gt;
+</code></pre><h5 id="COPY"><a href="#COPY" class="headerlink" title="COPY"></a>COPY</h5><p>　　复制宿主机的<code>&lt;src&gt;</code>到容器的<code>&lt;dst&gt;</code>，<code>&lt;src&gt;</code>的路径必须是Dockerfile文件所在目录的相对路径。</p>
+<pre><code>COPY &lt;src&gt; &lt;dst&gt;
+</code></pre><h5 id="VOLUME"><a href="#VOLUME" class="headerlink" title="VOLUME"></a>VOLUME</h5><p>　　在容器中添加一个挂载点，但主机挂载目录是自动生成的。主机对应目录可以通过<code>docker inspect container_name/container_id</code>进行查看。</p>
+<pre><code>VOLUME [&quot;/data1&quot;,&quot;/data2&quot;]
+</code></pre><p>　　如果要指定主机的挂载目录，则需要在容器运行时通过<code>-v</code>参数指定挂载目录。</p>
+<pre><code>docker run -d -v /home/cx1ng/data:/data -e MYSQL_ROOT_PASSWORD=12345 mysql
+</code></pre><h5 id="USER"><a href="#USER" class="headerlink" title="USER"></a>USER</h5><p>　　<code>USER</code>命令用于指明容器运行时的用户。</p>
+<pre><code>USER cx1ng
+</code></pre><h5 id="WORKDIR"><a href="#WORKDIR" class="headerlink" title="WORKDIR"></a>WORKDIR</h5><p>　　为后续的指令（RUN、CMD、ENTRYPOINT）配置工作目录，如果路径是相对路径，则会基于之前命令指定的路径。</p>
+<pre><code>WORKDIR /home/cx1ng/
+</code></pre><h5 id="ONBUILD"><a href="#ONBUILD" class="headerlink" title="ONBUILD"></a>ONBUILD</h5><p>　　当本镜像作为<code>Dockerfile</code>的基础镜像，会执行的命令</p>
+<blockquote>
+<p>更详细的请查看<a href="http://www.dockerinfo.net/dockerfile%E4%BB%8B%E7%BB%8D" target="_blank" rel="noopener">这里</a></p>
+</blockquote>
+
+        
+                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
+                    <p><strong>
+                         
+                            本文使用<a href=https://creativecommons.org/licenses/by-nc-sa/4.0/"">CC BY-NA-SA 4.0</a>协议许可
+                        </strong>
+                        <br>
+                        <strong>本文链接：</strong><a href="http://404-notfound.com/2017/10/06/Dockerfile详解/">http://404-notfound.com/2017/10/06/Dockerfile详解/</a>
+                    </p>
+                </blockquote>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0;
+            display: none
+        }
+</style>
+	
+<div class="btn_click_load"> 
+    <button class="disqus_click_btn">阅读评论（请确保 disqus 可以正常加载）</button>
+</div>
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://404-notfound.com/2017/10/06/Dockerfile详解/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://404-notfound.com/2017/10/06/Dockerfile详解/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/ls-javascript" id="disqus-lazy-load-script">
+    $.ajax({
+        url: 'https://disqus.com/next/config.json',
+        timeout: 4000,
+        type: 'GET',
+        success: (function() {
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//404-notfound.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+            $('.disqus_click_btn').css('display','none');
+        })(),
+        error: function() {
+          $('.disqus_click_btn').css('display','block');
+        }
+    });
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//404-notfound.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.disqus_click_btn').css('display','none');
+    });
+</script>
+  	
+
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/10/01/Docker-pull镜像失败的解决方案/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
 
 
 
@@ -979,6 +883,14 @@ It will not impact the appearance and can give developers a lot of support :)
                     
 
                     
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
 
                     <!--Footer-->
 <footer class="mdl-mini-footer" id="bottom">
@@ -1119,6 +1031,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
     
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
 
 
 
@@ -1131,6 +1047,11 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
         
     
     
