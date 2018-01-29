@@ -246,7 +246,7 @@
 
     
         <meta property="article:published_time" content="Sat Jan 27 2018 17:59:40 GMT+0800">
-        <meta property="article:modified_time" content="Sat Jan 27 2018 19:11:39 GMT+0800">
+        <meta property="article:modified_time" content="Mon Jan 29 2018 17:00:01 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -269,7 +269,7 @@
     "mainEntityOfPage": "http://404-notfound.com/git修改commit相关信息/index.html",
     "headline": "git修改commit相关信息",
     "datePublished": "Sat Jan 27 2018 17:59:40 GMT+0800",
-    "dateModified": "Sat Jan 27 2018 19:11:39 GMT+0800",
+    "dateModified": "Mon Jan 29 2018 17:00:01 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "CX1ng",
@@ -528,7 +528,7 @@
         <p>最近在使用git的时候，经常性的需要执行修改commit信息，合并commit等操作，所以在此做一下总结。  </p>
 <h3 id="修改commit相关信息"><a href="#修改commit相关信息" class="headerlink" title="修改commit相关信息"></a>修改commit相关信息</h3><h4 id="修改commit信息"><a href="#修改commit信息" class="headerlink" title="修改commit信息"></a>修改commit信息</h4><p>在使用git提交过后，想更改commit信息的话，可以使用</p>
 <pre><code>git rebase -i HEAD~n
-</code></pre><p>n的值由你想修改的commit在<code>git log</code>中所处的位置所决定。<br><strong>在执行rebase之前，需要先执行git stash暂存修改当前的文件修改，rebase结束后执行git stash pop恢复现场</strong><br>例如：<br><img src="../images/git1.png" alt=""><br>如果我想修改hash为<code>b5d486c8aa7b07c398332026ce7760e8558acbd6</code>这条提交记录的commit信息，可以执行命令:</p>
+</code></pre><p>n的值由你想修改的commit在<code>git log</code>中所处的位置所决定。<br><strong>在执行rebase之前，需要先执行git stash暂存当前的文件修改，rebase结束后执行git stash pop恢复现场</strong><br>例如：<br><img src="../images/git1.png" alt=""><br>如果我想修改hash为<code>b5d486c8aa7b07c398332026ce7760e8558acbd6</code>这条提交记录的commit信息，可以执行命令:</p>
 <pre><code>git rebase -i HEAD~2
 </code></pre><p><img src="../images/git2.png" alt=""><br>进入Rebase文件后，找到要修改的commit记录前，将<code>pick</code>修改为<code>edit</code>，保存退出。<br>然后执行命令:</p>
 <pre><code>git commit --amend
