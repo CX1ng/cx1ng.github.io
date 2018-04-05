@@ -45,7 +45,7 @@
     
     <title>
         
-            标签: Docker | 
+            UML类图及其关系 | 
         
         404 NotFound
     </title>
@@ -56,7 +56,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="golang backend">
+    <meta name="keywords" content="golang backend,设计模式">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -83,6 +83,9 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/Tomorrow.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
             
         
 
@@ -219,7 +222,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="404 NotFound">
-    <meta name="msapplication-starturl" content="http://404-notfound.com/tags/Docker/">
+    <meta name="msapplication-starturl" content="http://404-notfound.com/UML类图/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="404 NotFound">
@@ -234,13 +237,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://404-notfound.com/tags/Docker/">
+    <meta property="og:url" content="http://404-notfound.com/UML类图/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签: Docker | 404 NotFound">
+    <meta property="og:title" content="UML类图及其关系 | 404 NotFound">
     <meta property="og:image" content="/img/favicon.ico">
     <meta property="og:description" content="">
-    
+    <meta property="og:article:tag" content="设计模式"> 
 
+    
+        <meta property="article:published_time" content="Thu Apr 05 2018 17:57:38 GMT+0800">
+        <meta property="article:modified_time" content="Thu Apr 05 2018 18:56:09 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -248,13 +254,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://404-notfound.com/tags/Docker/index.html" />
+        <link rel="canonical" href="http://404-notfound.com/UML类图/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://404-notfound.com/UML类图/index.html",
+    "headline": "UML类图及其关系",
+    "datePublished": "Thu Apr 05 2018 17:57:38 GMT+0800",
+    "dateModified": "Thu Apr 05 2018 18:56:09 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "CX1ng",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.jpg"
+        },
+        "description": "我见青山多妩媚，料青山、见我应如是。"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "404 NotFound",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.ico"
+        }
+    },
+    "keywords": ",设计模式golang backend",
+    "description": "",
+}
+</script>
 
 
     
@@ -305,164 +341,434 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#类"><span class="post-toc-number">1.</span> <span class="post-toc-text">类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#类之间的关系"><span class="post-toc-number">2.</span> <span class="post-toc-text">类之间的关系</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#继承关系"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">继承关系</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#实现关系"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">实现关系</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#依赖关系"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">依赖关系</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#关联关系"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">关联关系</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#聚合关系"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">聚合关系</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#组合关系"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">组合关系</span></a></li></ol></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/Dockerfile详解/">Dockerfile详解</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            概述　　Docker镜像包含两种常用的构造方式:
-
-
-docker commit – 通过对已经存在的容器修改后提交生成镜像
-docker build  – 通过Dockerfile文件生成镜...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/Dockerfile详解/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="CX1ng's avatar">
-            </div>
-            <div>
-                <strong>CX1ng</strong>
-                <span>10月 06, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/工具使用/">工具使用</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/Docker-pull镜像失败的解决方案/">Docker pull镜像失败的解决方案</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            背景　　使用Docker从官方仓库拉取镜像时失败。
-解决方案
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/Docker-pull镜像失败的解决方案/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="CX1ng's avatar">
-            </div>
-            <div>
-                <strong>CX1ng</strong>
-                <span>10月 01, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/工具使用/">工具使用</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                UML类图及其关系
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>CX1ng</strong>
+        <span>4月 05, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/设计模式/">设计模式</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=UML类图及其关系&url=http://404-notfound.com/UML类图/index.html&pic=http://404-notfound.com/img/favicon.ico&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=UML类图及其关系&url=http://404-notfound.com/UML类图/index.html&via=CX1ng" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://404-notfound.com/UML类图/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://404-notfound.com/UML类图/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><p>在UML的类图中对象类通常使用以下形式表示：</p>
+<div align="center"><br><img src="../images/class.png" width="200" height="200" alt="class.png" align="center"><br><p>Student类</p><br></div>
+
+<pre><code>class Student{
+private:
+    int age;
+    string name;
+public:
+    void Study(){...}
+    void Eat(string food){...}
+    void Sleep(){...}
+}
+</code></pre><p><strong>属性</strong>：<br><strong>基本格式</strong>：<code>可见性 属性名: 类型 [= 默认值]</code><br><strong>可见性</strong>： 分为<code>Public(+)</code>、<code>Protected(#)</code>、<code>Private(-)</code><br>默认值可省略<br><strong>方法</strong>：<br><strong>基本格式</strong>：<code>可见性 方法名(参数 : 参数类型) [: 返回类型]</code><br><strong>可见性</strong>：与属性定义相同<br><strong>参数</strong>：可选项，多个参数之间通过<code>,</code>进行分隔<br><strong>返回值</strong>：可选项，多个返回类型之间通过<code>,</code>分隔</p>
+<h3 id="类之间的关系"><a href="#类之间的关系" class="headerlink" title="类之间的关系"></a>类之间的关系</h3><p>类与类之间的关系基本可以归为6类：继承、实现、依赖、关联、聚合、组合</p>
+<h4 id="继承关系"><a href="#继承关系" class="headerlink" title="继承关系"></a>继承关系</h4><div align="center"><br><img src="../images/super.png" width="200" height="310" alt="class.png" align="center"><br><p>继承</p><br></div> 
+
+<p>通过使用<strong>带三角箭头的实线</strong>将两个类连接起来, 由<strong>子类指向父类</strong>表示继承关系<br>子类可继承父类的所有方法和属性，并根据需要自由的进行扩展</p>
+<pre><code>class Human {
+private:
+    int age;
+    string name;
+public:
+    Eat(string food){...}
+    Sleep(){...}
+}
+
+class Student: public Human{
+private:
+    int age;
+    string name;
+public:
+    void Study(){...}
+}
+</code></pre><p><br> </p>
+<h4 id="实现关系"><a href="#实现关系" class="headerlink" title="实现关系"></a>实现关系</h4><div align="center"><br><img src="../images/interface.png" heigh="300" width="200" alt="interface.png" align="center"><br><p>实现</p><br></div>
+
+<p>通过使用<strong>带三角箭头的虚线</strong>将类与接口/抽象类进行连接，表示类实现了接口/抽象类所定义的方法。</p>
+<pre><code>type Studier interface{
+    void Study()
+}
+
+class Student {
+public:
+    void Study(){...}
+    void Sleep(){...}
+    ...
+}
+</code></pre><p><br> </p>
+<h4 id="依赖关系"><a href="#依赖关系" class="headerlink" title="依赖关系"></a>依赖关系</h4><div align="center"><br><img src="../images/dep.png" heigth="300" width="300" alt="dep.png" align="center"><br><p>依赖</p><br></div>  
+
+<p>依赖关系通过使用<strong>带箭头的虚线</strong>将两个类进行连接表示。<br>在代码中，通常使用参数表示依赖关系。</p>
+<pre><code>class Food {
+    ...
+}
+
+class Student{
+public:
+    void Eat(Food food){...}
+    ...
+}
+</code></pre><p><br></p>
+<h4 id="关联关系"><a href="#关联关系" class="headerlink" title="关联关系"></a>关联关系</h4><div align="center"><br><img src="../images/association.png" heigth="300" width="300" alt="association.png" align="center"><br><p>关联</p><br></div>
+
+<p>关联关系通过使用<strong>带箭头的实线</strong>将两个类进行连接表示。<br>关联关系可以是单向关联（单向箭头）或双向关联（双向箭头），在代码中，通常使用成员变量表示关联关系。</p>
+<pre><code>class Book{
+    ...
+}
+
+class Student{
+private:
+    Book[] books
+public:
+    void Study(Book[] book){...}
+    ...
+}
+</code></pre><p><br></p>
+<h4 id="聚合关系"><a href="#聚合关系" class="headerlink" title="聚合关系"></a>聚合关系</h4><div align="center"><br><img src="../images/aggregation.png" width="300" height="140" alt="aggregation.png" align="center"><br><p>聚合</p><br></div>
+
+<p>聚合关系使用<strong>带空心棱形的实线</strong>将两个类连接起来，<strong>菱形指向整体</strong>表示聚合关系。<br>聚合关系中整体是由多个对象组成的，而每个对象都有各自的生命周期。被聚合类在聚合类外进行创建，聚合类不负责创建，通过对外提供接口，由调用者通过接口传参进行成员的初始化。</p>
+<pre><code>class Student {
+    ...
+}
+
+class Class {
+private:
+    Student[] students;
+public:
+    void Class(Student[] students){
+        this.students = students;
+    }
+    ...
+}
+</code></pre><p><br></p>
+<h4 id="组合关系"><a href="#组合关系" class="headerlink" title="组合关系"></a>组合关系</h4><div align="center"><br><img src="../images/composition.png" width="320" height="140" alt="composition.png" align="center"><br><p>组合</p><br></div> 
+
+<p>组合关系使用<strong>带实心棱形的实线</strong>将两个类连接起来，<strong>菱形指向整体</strong>表示组合关系。<br>两个类之间的关系相较于聚合关系更加紧密，组合类负责被包含类对象的创建和销毁，在代码中通常也表示为类的成员变量。</p>
+<pre><code>class Eye{
+    ...
+}
+
+class Student{
+private:
+    Eye eyes;
+public:
+    void Eyes() {
+        eyes = new Eye()
+    }
+    ...
+}
+</code></pre><p><br><br>6种类关系间的紧密程度由强到弱为：<br>继承 = 实现 &gt; 组合 &gt; 聚合 &gt; 关联 &gt; 依赖</p>
+<p>参考：<br><a href="https://my.oschina.net/jackieyeah/blog/224265" target="_blank" rel="noopener">https://my.oschina.net/jackieyeah/blog/224265</a><br><a href="http://www.uml.org.cn/oobject/201012233.asp" target="_blank" rel="noopener">http://www.uml.org.cn/oobject/201012233.asp</a></p>
+
+        
+                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
+                    <p><strong>
+                         
+                            本文使用<a href=https://creativecommons.org/licenses/by-nc-sa/4.0/"">CC BY-NA-SA 4.0</a>协议许可
+                        </strong>
+                        <br>
+                        <strong>本文链接：</strong><a href="http://404-notfound.com/UML类图/">http://404-notfound.com/UML类图/</a>
+                    </p>
+                </blockquote>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0;
+            display: none
+        }
+</style>
+	
+<div class="btn_click_load"> 
+    <button class="disqus_click_btn">阅读评论（请确保 disqus 可以正常加载）</button>
+</div>
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://404-notfound.com/UML类图/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://404-notfound.com/UML类图/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/ls-javascript" id="disqus-lazy-load-script">
+    $.ajax({
+        url: 'https://disqus.com/next/config.json',
+        timeout: 4000,
+        type: 'GET',
+        success: (function() {
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//404-notfound.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+            $('.disqus_click_btn').css('display','none');
+        })(),
+        error: function() {
+          $('.disqus_click_btn').css('display','block');
+        }
+    });
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//404-notfound.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.disqus_click_btn').css('display','none');
+    });
+</script>
+  	
+
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/Travis-CI持续集成/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -640,6 +946,14 @@ It will not impact the appearance and can give developers a lot of support :)
                     
 
                     
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
 
                     <!--Footer-->
 <footer class="mdl-mini-footer" id="bottom">
@@ -780,6 +1094,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
     
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
 
 
 
@@ -792,6 +1110,11 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
         
     
     
