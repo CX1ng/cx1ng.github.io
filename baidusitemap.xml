@@ -4,6 +4,46 @@
 
     
   <url>
+    <loc>http://404-notfound.com/Singleton/</loc>
+    <lastmod>2018-05-12T14:59:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式--单例模式（Go语言描述）</title>
+        <pubTime>2018-05-12T14:30:00.000Z</pubTime>
+        
+        <tag>设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程学习" url="http://404-notfound.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://404-notfound.com/Dockerfile%E8%AF%A6%E8%A7%A3/</loc>
+    <lastmod>2018-05-12T14:33:29.000Z</lastmod>
+    <data>
+        <display>
+        <title>Dockerfile详解</title>
+        <pubTime>2017-10-05T20:25:38.000Z</pubTime>
+        
+        <tag>Docker</tag>
+         
+         
+           
+             
+              <breadCrumb title="工具使用" url="http://404-notfound.com/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://404-notfound.com/UML%E7%B1%BB%E5%9B%BE/</loc>
     <lastmod>2018-04-05T10:56:09.000Z</lastmod>
     <data>
@@ -65,26 +105,6 @@
     
     
     
-    
-  <url>
-    <loc>http://404-notfound.com/Dockerfile%E8%AF%A6%E8%A7%A3/</loc>
-    <lastmod>2018-01-03T16:17:41.000Z</lastmod>
-    <data>
-        <display>
-        <title>Dockerfile详解</title>
-        <pubTime>2017-10-05T20:25:38.000Z</pubTime>
-        
-        <tag>Docker</tag>
-         
-         
-           
-             
-              <breadCrumb title="工具使用" url="http://404-notfound.com/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://404-notfound.com/CentOS%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BD%BF%E7%94%A8SS%E4%BB%A3%E7%90%86%E7%9A%84%E6%96%B9%E6%B3%95/</loc>
