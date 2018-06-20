@@ -245,8 +245,8 @@
     <meta property="og:article:tag" content="设计模式"> 
 
     
-        <meta property="article:published_time" content="Sat May 12 2018 22:30:00 GMT+0800">
-        <meta property="article:modified_time" content="Sun May 20 2018 20:23:06 GMT+0800">
+        <meta property="article:published_time" content="Wed Jun 20 2018 19:02:00 GMT+0800">
+        <meta property="article:modified_time" content="Wed Jun 20 2018 19:02:31 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -268,8 +268,8 @@
     "@type": "BlogPosting",
     "mainEntityOfPage": "http://404-notfound.com/factory/index.html",
     "headline": "设计模式--工厂方法模式（Go语言描述）",
-    "datePublished": "Sat May 12 2018 22:30:00 GMT+0800",
-    "dateModified": "Sun May 20 2018 20:23:06 GMT+0800",
+    "datePublished": "Wed Jun 20 2018 19:02:00 GMT+0800",
+    "dateModified": "Wed Jun 20 2018 19:02:31 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "CX1ng",
@@ -370,7 +370,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设计模式–简单工厂方法模式-Go语言描述"><span class="post-toc-number">1.</span> <span class="post-toc-text">设计模式–简单工厂方法模式(Go语言描述)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#介绍"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">介绍</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#UML"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">UML</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#示例"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">示例</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设计模式–工厂方法模式-Go语言描述"><span class="post-toc-number">1.</span> <span class="post-toc-text">设计模式–工厂方法模式(Go语言描述)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#简单工厂模式"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">简单工厂模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#UML"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">UML</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#示例"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">示例</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#小结"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">小结</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#工厂方法模式"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">工厂方法模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#UML-1"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">UML</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#示例-1"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">示例</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#小结-1"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">小结</span></a></li></ol></li></ol></li></ol>
     </ul>
     
 
@@ -421,7 +421,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>CX1ng</strong>
-        <span>5月 12, 2018</span>
+        <span>6月 20, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -525,42 +525,120 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h3 id="设计模式–简单工厂方法模式-Go语言描述"><a href="#设计模式–简单工厂方法模式-Go语言描述" class="headerlink" title="设计模式–简单工厂方法模式(Go语言描述)"></a>设计模式–简单工厂方法模式(Go语言描述)</h3><h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>“工厂方法模式（英语：Factory method pattern）是一种实现了“工厂”概念的面向对象设计模式。就像其他创建型模式一样，它也是处理在不指定对象具体类型的情况下创建对象的问题。工厂方法模式的实质是‘定义一个创建对象的接口，但让实现这个接口的类来决定实例化哪个类。工厂方法让类的实例化推迟到子类中进行。’” –维基百科</p>
-<h4 id="UML"><a href="#UML" class="headerlink" title="UML"></a>UML</h4><p><img src="../images/factory.png" alt="factory.png"></p>
-<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><pre><code>// production.go
+        <h3 id="设计模式–工厂方法模式-Go语言描述"><a href="#设计模式–工厂方法模式-Go语言描述" class="headerlink" title="设计模式–工厂方法模式(Go语言描述)"></a>设计模式–工厂方法模式(Go语言描述)</h3><h4 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h4><h5 id="UML"><a href="#UML" class="headerlink" title="UML"></a>UML</h5><p><div align="center"><br><img src="../images/samplefactory.png" width="450" height="200" alt="class.png" align="center"><br></div><br>简单工厂模式中通常包含以下几种角色：  </p>
+<ol>
+<li><strong>Factory(工厂类)</strong> 工厂类用来生产产品，是整个简单工厂模式的核心。在简单工厂模式中，通过调用工厂类传入想要生产的产品参数，生产相应的产品。  </li>
+<li><strong>Product(抽象产品类)</strong> 抽象产品类，用来定义具体产品所应实现的接口。  </li>
+<li><strong>ConcreteProduct(具体产品类)</strong> 具体产品类，实现了抽象产品类接口，不同的具体产品，对于同一种方法可能具有不同的实现方式，经由工厂类进行实例化。  </li>
+</ol>
+<h5 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h5><pre><code>package main
 
-package main
+import (
+    &quot;fmt&quot;
+    &quot;strings&quot;
+)
+
+type Car interface {
+    Drive()
+}
+
+type BMW struct{}
+
+func (b *BMW) Drive() {
+    fmt.Printf(&quot;Drive BMW\n&quot;)
+}
+
+type Audi struct{}
+
+func (a *Audi) Drive() {
+    fmt.Printf(&quot;Drive Auti\n&quot;)
+}
+
+func Factory(name string) Car {
+    switch strings.ToLower(name) {
+    case &quot;audi&quot;:
+        return &amp;Audi{}
+    case &quot;bmw&quot;:
+        return &amp;BMW{}
+    default:
+        fmt.Printf(&quot;Not Support %s\n&quot;, name)
+        return nil
+    }
+}
+
+func main() {
+    car := Factory(&quot;BMW&quot;)
+    car.Drive()
+    car = Factory(&quot;Audi&quot;)
+    car.Drive()
+}
+
+/* 输出
+Drive BMW
+Drive Auti
+*/
+</code></pre><h5 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h5><p>简单工厂模式，减轻了客户端创建类实例时的负担，只需调用工厂类传入产品参数即可获得产品实例，无需再关心具体产品创建的逻辑和细节，简化了客户端的工作，但是在简单工厂模式中，工厂方法<strong>职责过重</strong>，如果具体产品种类太多，会造成工厂方法的业务逻辑复杂，另外，如果要新增具体产品类，则需要在工厂类中增加相应的初始化方法，违反了“<strong>开闭原则</strong>”。</p>
+<h4 id="工厂方法模式"><a href="#工厂方法模式" class="headerlink" title="工厂方法模式"></a>工厂方法模式</h4><h5 id="UML-1"><a href="#UML-1" class="headerlink" title="UML"></a>UML</h5><p><div align="center"><br><img src="../images/factory.png" width="600" height="300" alt="class.png" align="center"><br></div><br>工厂方法模式通常包含以下几种角色：  </p>
+<ol>
+<li><strong>Factory(抽象工厂类)</strong>:  定义了工厂接口，所有具体工厂都应该实现该接口。  </li>
+<li><strong>ConcreteFactory(具体工厂类)</strong>: 细化了简单工厂模式中工厂方法过重的职责，每种工厂只负责一种具体产品的生产。  </li>
+<li><strong>Product(抽象产品类)</strong>:  定义了产品的公共接口，全部具体产品都应实现本接口。  </li>
+<li><strong>ConcreteProduct(具体产品类)</strong>:  实现了抽象产品接口，由具体的工厂负责生产，具体产品与具体工厂存在一一对应的关系。  </li>
+</ol>
+<h5 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h5><pre><code>package main
 
 import (
     &quot;fmt&quot;
 )
 
-type Production struct{
-    func Drive()
+type CarFactory interface {
+    FactoryMethod() Car
 }
 
-type Benz struct {}
+type BMWFactory struct{}
 
-func (b *Benz)Drive(){
-    fmt.Printf(&quot;Drive Benz\n&quot;)
+func (f *BMWFactory) FactoryMethod() Car {
+    return &amp;BMW{}
 }
 
-type Audi struct {}
+type AudiFactory struct{}
 
-func (a *Audi)Drive(){
-    fmt.Printf(&quot;Drive Audi\n&quot;)
+func (f *AudiFactory) FactoryMethod() Car {
+    return &amp;Audi{}
 }
 
-type BMW struct {}
+type Car interface {
+    Drive()
+}
 
-func (b *BMW)Drive(){
+type BMW struct{}
+
+func (b *BMW) Drive() {
     fmt.Printf(&quot;Drive BMW\n&quot;)
 }
-</code></pre><pre><code>
-</code></pre><p>参考  </p>
-<ol>
-<li><a href="https://zh.wikipedia.org/wiki/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95" target="_blank" rel="noopener">维基百科</a></li>
-</ol>
+
+type Audi struct{}
+
+func (a *Audi) Drive() {
+    fmt.Printf(&quot;Drive Auti\n&quot;)
+}
+
+func main() {
+    bmwFactory := &amp;BMWFactory{}
+    car := bmwFactory.FactoryMethod()
+    car.Drive()
+
+    audiFactory := &amp;AudiFactory{}
+    car = audiFactory.FactoryMethod()
+    car.Drive()
+}
+
+/* 输出
+Drive BMW
+Drive Auti
+*/
+</code></pre><p>在上述例子中使用<strong>CarFactory</strong>接口定义了具体工厂所应具有的方法，<strong>BMWFactory</strong>和<strong>AudiFactory</strong>作为具体工厂分别生产相对应的单一具体产品<strong>BMW</strong>和<strong>Audi</strong> </p>
+<h5 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h5><p>在工厂方法模式中，通过设置具体工厂，对<strong>简单工厂模式</strong>中的负责的工厂类进行了职责的分离，在具体工厂中进行具体产品的生产更加符合”<strong>单一原则</strong>“，在新增产品时，只需要新增相应的具体工厂和具体产品即可，不再需要修改工厂类，符合”<strong>开闭原则</strong>“。<br>因为不同的产品对应于不同的工厂，所以系统类的个数在增加产品时将会成对增加，在一定程度上增大了系统复杂度。</p>
 
         
                 <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
@@ -773,7 +851,7 @@ func (b *BMW)Drive(){
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
