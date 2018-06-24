@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://404-notfound.com/abstractFactory/</loc>
+    <lastmod>2018-06-24T14:39:20.000Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式--抽象工厂模式（Go语言描述）</title>
+        <pubTime>2018-06-22T10:26:25.000Z</pubTime>
+        
+        <tag>设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程学习" url="http://404-notfound.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://404-notfound.com/factory/</loc>
     <lastmod>2018-06-20T11:02:31.000Z</lastmod>
     <data>

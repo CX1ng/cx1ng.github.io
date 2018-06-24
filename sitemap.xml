@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://404-notfound.com/abstractFactory/</loc>
+    
+    <lastmod>2018-06-24T14:39:20.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://404-notfound.com/factory/</loc>
     
     <lastmod>2018-06-20T11:02:31.000Z</lastmod>
