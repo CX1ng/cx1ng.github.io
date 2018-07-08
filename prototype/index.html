@@ -45,7 +45,7 @@
     
     <title>
         
-            归档: 2018/6 | 
+            设计模式--原型模式（Go语言描述） | 
         
         404 NotFound
     </title>
@@ -56,7 +56,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="golang backend">
+    <meta name="keywords" content="golang backend,设计模式">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -83,6 +83,9 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/Tomorrow.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
             
         
 
@@ -219,7 +222,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="404 NotFound">
-    <meta name="msapplication-starturl" content="http://404-notfound.com/archives/2018/06/">
+    <meta name="msapplication-starturl" content="http://404-notfound.com/prototype/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="404 NotFound">
@@ -234,13 +237,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://404-notfound.com/archives/2018/06/">
+    <meta property="og:url" content="http://404-notfound.com/prototype/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2018/6 | 404 NotFound">
+    <meta property="og:title" content="设计模式--原型模式（Go语言描述） | 404 NotFound">
     <meta property="og:image" content="/img/favicon.ico">
     <meta property="og:description" content="">
-    
+    <meta property="og:article:tag" content="设计模式"> 
 
+    
+        <meta property="article:published_time" content="Sun Jul 08 2018 18:18:54 GMT+0800">
+        <meta property="article:modified_time" content="Sun Jul 08 2018 19:25:58 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -248,13 +254,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://404-notfound.com/archives/2018/06/index.html" />
+        <link rel="canonical" href="http://404-notfound.com/prototype/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://404-notfound.com/prototype/index.html",
+    "headline": "设计模式--原型模式（Go语言描述）",
+    "datePublished": "Sun Jul 08 2018 18:18:54 GMT+0800",
+    "dateModified": "Sun Jul 08 2018 19:25:58 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "CX1ng",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.jpg"
+        },
+        "description": "我见青山多妩媚，料青山、见我应如是。"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "404 NotFound",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.ico"
+        }
+    },
+    "keywords": ",设计模式golang backend",
+    "description": "",
+}
+</script>
 
 
     
@@ -305,159 +341,428 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设计模式–原型模式-Go语言描述"><span class="post-toc-number">1.</span> <span class="post-toc-text">设计模式–原型模式(Go语言描述)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#原型模式"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">原型模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#UML"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">UML</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#示例"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">示例</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#小结"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">小结</span></a></li></ol></li></ol></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/abstractFactory/">设计模式--抽象工厂模式（Go语言描述）</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            设计模式–抽象工厂模式(Go语言描述)U...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/abstractFactory/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="CX1ng's avatar">
-            </div>
-            <div>
-                <strong>CX1ng</strong>
-                <span>6月 22, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/编程学习/">编程学习</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/factory/">设计模式--工厂方法模式（Go语言描述）</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            设计模式–工厂方法模式(Go语言描述)
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/factory/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="CX1ng's avatar">
-            </div>
-            <div>
-                <strong>CX1ng</strong>
-                <span>6月 20, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/编程学习/">编程学习</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                设计模式--原型模式（Go语言描述）
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>CX1ng</strong>
+        <span>7月 08, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/设计模式/">设计模式</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=设计模式--原型模式（Go语言描述）&url=http://404-notfound.com/prototype/index.html&pic=http://404-notfound.com/img/favicon.ico&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=设计模式--原型模式（Go语言描述）&url=http://404-notfound.com/prototype/index.html&via=CX1ng" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://404-notfound.com/prototype/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://404-notfound.com/prototype/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h3 id="设计模式–原型模式-Go语言描述"><a href="#设计模式–原型模式-Go语言描述" class="headerlink" title="设计模式–原型模式(Go语言描述)"></a>设计模式–原型模式(Go语言描述)</h3><h4 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h4><h5 id="UML"><a href="#UML" class="headerlink" title="UML"></a>UML</h5><p><div align="center"><br><img src="../images/prototype.png" width="500" height="240" alt="class.png" align="center"><br></div><br>原型模式通常含有一下角色:  </p>
+<ol>
+<li><strong>Client(客户端)</strong>: 在实现中调用原型类，通过使用Clone方法生产多个对象  </li>
+<li><strong>Prototype(公共接口)</strong>: 原型接口或抽象类，声明了原型类所需实现的Clone方法    </li>
+<li><strong>ConcretePrototype(原型类)</strong>: 实现了接口中的Clone方法，生产一个以自己为基础的克隆对象</li>
+</ol>
+<h5 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h5><p>浅拷贝原型模式：  </p>
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+)
+
+type Prototype interface {
+    Clone() Prototype
+}
+
+type Persion struct {
+    Age int
+    Hobbies map[int]string
+}
+
+func NewPersion(age int, hobbies map[int]string) *Persion{
+    return &amp;Persion{
+        Age: age,
+        Hobbies: hobbies,
+    }
+}
+
+// 浅拷贝
+func (p *Persion)Clone() *Persion{
+    return p
+}
+
+func main(){
+    hobbies := map[int]string{
+        1: &quot;football&quot;,
+        2: &quot;basketball&quot;,
+    }
+    li := NewPersion(20, hobbies)
+    // li&#39;s information:&amp;{age:20 hobbies:map[2:basketball 1:football]}
+    fmt.Printf(&quot;li&#39;s information:%+v\n&quot;,li)
+    wang := li.Clone()
+    // wang&#39;s information:&amp;{Age:20 Hobbies:map[1:football 2:basketball]}
+    fmt.Printf(&quot;wang&#39;s information:%+v\n&quot;, wang)
+    wang.Hobbies[1] = &quot;ball&quot;
+    // li&#39;s information:&amp;{Age:20 Hobbies:map[1:ball 2:basketball]}
+    fmt.Printf(&quot;li&#39;s information:%+v\n&quot;,li)
+    // wang&#39;s information:&amp;{Age:20 Hobbies:map[1:ball 2:basketball]}
+    fmt.Printf(&quot;wang&#39;s information:%+v\n&quot;, wang)
+}
+</code></pre><p>深拷贝原型模式：</p>
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+)
+
+type Prototype interface {
+    Clone() Prototype
+}
+
+type Persion struct {
+    Age int
+    Hobbies map[int]string
+}
+
+func NewPersion(age int, hobbies map[int]string) *Persion{
+    return &amp;Persion{
+        Age: age,
+        Hobbies: hobbies,
+    }
+}
+
+// 深拷贝
+func (p *Persion)Clone() *Persion{
+    hobbies := make(map[int]string)
+    for key, hobby := range p.Hobbies {
+        hobbies[key] = hobby
+    }
+    return &amp;Persion{
+        Age: p.Age,
+        Hobbies: hobbies,
+    }
+}
+
+func main(){
+    hobbies := map[int]string{
+        1: &quot;football&quot;,
+        2: &quot;basketball&quot;,
+    }
+    li := NewPersion(20, hobbies)
+    // li&#39;s information:&amp;{age:20 hobbies:map[2:basketball 1:football]}
+    fmt.Printf(&quot;li&#39;s information:%+v\n&quot;,li)
+    wang := li.Clone()
+    // wang&#39;s information:&amp;{Age:20 Hobbies:map[1:football 2:basketball]}
+    fmt.Printf(&quot;wang&#39;s information:%+v\n&quot;, wang)
+    wang.Hobbies[1] = &quot;ball&quot;
+    // li&#39;s information:&amp;{Age:20 Hobbies:map[1:football 2:basketball]}
+    fmt.Printf(&quot;li&#39;s information:%+v\n&quot;,li)
+    // wang&#39;s information:&amp;{Age:20 Hobbies:map[1:ball 2:basketball]}
+    fmt.Printf(&quot;wang&#39;s information:%+v\n&quot;, wang)
+}
+</code></pre><p>原型模式分为<code>浅拷贝</code>和<code>深拷贝</code>，如示例中所写，当实现为<code>浅拷贝</code>时，更改拷贝项中的<code>指针</code>或<code>引用</code>对象，源自同一个原型的全部的克隆对象都会受到影响，而通过重新申请内存空间实现深拷贝模式，在修改引用对象的<code>指针</code>或<code>引用</code>项时，不会影响其他的克隆对象。</p>
+<h5 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h5><p>原型模式主要应用于实例化对象较为复杂繁琐、成本较大的场景，通过克隆复制已有的原型对象，简化创建过程，提高效率。<br>在使用原型对象时，需要根据对象成员的实际情况选择深拷贝或浅拷贝。</p>
+
+        
+                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
+                    <p><strong>
+                         
+                            本文使用<a href=https://creativecommons.org/licenses/by-nc-sa/4.0/"">CC BY-NA-SA 4.0</a>协议许可
+                        </strong>
+                        <br>
+                        <strong>本文链接：</strong><a href="http://404-notfound.com/prototype/">http://404-notfound.com/prototype/</a>
+                    </p>
+                </blockquote>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0;
+            display: none
+        }
+</style>
+	
+<div class="btn_click_load"> 
+    <button class="disqus_click_btn">阅读评论（请确保 disqus 可以正常加载）</button>
+</div>
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://404-notfound.com/prototype/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://404-notfound.com/prototype/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/ls-javascript" id="disqus-lazy-load-script">
+    $.ajax({
+        url: 'https://disqus.com/next/config.json',
+        timeout: 4000,
+        type: 'GET',
+        success: (function() {
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//404-notfound.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+            $('.disqus_click_btn').css('display','none');
+        })(),
+        error: function() {
+          $('.disqus_click_btn').css('display','block');
+        }
+    });
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//404-notfound.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.disqus_click_btn').css('display','none');
+    });
+</script>
+  	
+
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/vendor-workaround/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -793,6 +1098,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
     
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
 
 
 
@@ -805,6 +1114,11 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
         
     
     
