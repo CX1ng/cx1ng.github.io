@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://404-notfound.com/vendor-workaround/</loc>
+    <lastmod>2018-07-10T07:51:01.000Z</lastmod>
+    <data>
+        <display>
+        <title>GoLand无法正确识别项目下Vendor目录的解决方案</title>
+        <pubTime>2018-07-06T05:44:47.000Z</pubTime>
+        
+        <tag>GoLand</tag>
+         
+         
+           
+             
+              <breadCrumb title="工具使用" url="http://404-notfound.com/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://404-notfound.com/prototype/</loc>
     <lastmod>2018-07-08T11:25:58.000Z</lastmod>
     <data>
@@ -17,26 +37,6 @@
            
              
               <breadCrumb title="编程学习" url="http://404-notfound.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://404-notfound.com/vendor-workaround/</loc>
-    <lastmod>2018-07-06T06:20:56.000Z</lastmod>
-    <data>
-        <display>
-        <title>GoLand无法正确识别项目下Vendor目录的解决方案</title>
-        <pubTime>2018-07-06T05:44:47.000Z</pubTime>
-        
-        <tag>GoLand</tag>
-         
-         
-           
-             
-              <breadCrumb title="工具使用" url="http://404-notfound.com/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
           
         </display>
     </data>
