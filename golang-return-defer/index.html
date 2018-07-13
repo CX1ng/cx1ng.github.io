@@ -45,7 +45,7 @@
     
     <title>
         
-            git修改commit相关信息 | 
+            Golang Return Defer 流程分析 | 
         
         404 NotFound
     </title>
@@ -56,7 +56,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="golang backend,Git">
+    <meta name="keywords" content="golang backend,Golang">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -222,7 +222,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="404 NotFound">
-    <meta name="msapplication-starturl" content="http://404-notfound.com/git修改commit相关信息/">
+    <meta name="msapplication-starturl" content="http://404-notfound.com/golang-return-defer/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="404 NotFound">
@@ -237,16 +237,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://404-notfound.com/git修改commit相关信息/">
+    <meta property="og:url" content="http://404-notfound.com/golang-return-defer/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="git修改commit相关信息 | 404 NotFound">
+    <meta property="og:title" content="Golang Return Defer 流程分析 | 404 NotFound">
     <meta property="og:image" content="/img/favicon.ico">
     <meta property="og:description" content="">
-    <meta property="og:article:tag" content="Git"> 
+    <meta property="og:article:tag" content="Golang"> 
 
     
-        <meta property="article:published_time" content="Sat Jan 27 2018 17:59:40 GMT+0800">
-        <meta property="article:modified_time" content="Mon Jan 29 2018 17:00:01 GMT+0800">
+        <meta property="article:published_time" content="Thu Jul 12 2018 16:49:20 GMT+0800">
+        <meta property="article:modified_time" content="Fri Jul 13 2018 16:55:22 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -254,7 +254,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://404-notfound.com/git修改commit相关信息/index.html" />
+        <link rel="canonical" href="http://404-notfound.com/golang-return-defer/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -266,10 +266,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://404-notfound.com/git修改commit相关信息/index.html",
-    "headline": "git修改commit相关信息",
-    "datePublished": "Sat Jan 27 2018 17:59:40 GMT+0800",
-    "dateModified": "Mon Jan 29 2018 17:00:01 GMT+0800",
+    "mainEntityOfPage": "http://404-notfound.com/golang-return-defer/index.html",
+    "headline": "Golang Return Defer 流程分析",
+    "datePublished": "Thu Jul 12 2018 16:49:20 GMT+0800",
+    "dateModified": "Fri Jul 13 2018 16:55:22 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "CX1ng",
@@ -287,7 +287,7 @@
             "url": "/img/favicon.ico"
         }
     },
-    "keywords": ",Gitgolang backend",
+    "keywords": ",Golanggolang backend",
     "description": "",
 }
 </script>
@@ -370,7 +370,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#修改commit相关信息"><span class="post-toc-number">1.</span> <span class="post-toc-text">修改commit相关信息</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#修改commit信息"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">修改commit信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#修改author信息"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">修改author信息</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#合并commit"><span class="post-toc-number">2.</span> <span class="post-toc-text">合并commit</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#推送分支"><span class="post-toc-number">3.</span> <span class="post-toc-text">推送分支</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Golang-Return-Defer-流程分析"><span class="post-toc-number">1.</span> <span class="post-toc-text">Golang Return Defer 流程分析</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#代码测试"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">代码测试</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#匿名返回值"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">匿名返回值</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#命名返回值"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">命名返回值</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#汇编分析"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">汇编分析</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#匿名返回值-1"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">匿名返回值</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#命名返回值-1"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">命名返回值</span></a></li></ol></li></ol></li></ol>
     </ul>
     
 
@@ -402,7 +402,7 @@
         
     
             <p class="article-headline-p">
-                git修改commit相关信息
+                Golang Return Defer 流程分析
             </p>
         </div>
 
@@ -421,7 +421,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>CX1ng</strong>
-        <span>1月 27, 2018</span>
+        <span>7月 12, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -445,7 +445,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Git/">Git</a>
+        <a class="post_tag-link" href="/tags/Golang/">Golang</a>
     </ul>
     
 
@@ -473,7 +473,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=git修改commit相关信息&url=http://404-notfound.com/git修改commit相关信息/index.html&pic=http://404-notfound.com/img/favicon.ico&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Golang Return Defer 流程分析&url=http://404-notfound.com/golang-return-defer/index.html&pic=http://404-notfound.com/img/favicon.ico&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -482,7 +482,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=git修改commit相关信息&url=http://404-notfound.com/git修改commit相关信息/index.html&via=CX1ng" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Golang Return Defer 流程分析&url=http://404-notfound.com/golang-return-defer/index.html&via=CX1ng" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -491,7 +491,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://404-notfound.com/git修改commit相关信息/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://404-notfound.com/golang-return-defer/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -500,7 +500,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://404-notfound.com/git修改commit相关信息/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://404-notfound.com/golang-return-defer/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -525,23 +525,132 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>最近在使用git的时候，经常性的需要执行修改commit信息，合并commit等操作，所以在此做一下总结。  </p>
-<h3 id="修改commit相关信息"><a href="#修改commit相关信息" class="headerlink" title="修改commit相关信息"></a>修改commit相关信息</h3><h4 id="修改commit信息"><a href="#修改commit信息" class="headerlink" title="修改commit信息"></a>修改commit信息</h4><p>在使用git提交过后，想更改commit信息的话，可以使用</p>
-<pre><code>git rebase -i HEAD~n
-</code></pre><p>n的值由你想修改的commit在<code>git log</code>中所处的位置所决定。<br><strong>在执行rebase之前，需要先执行git stash暂存当前的文件修改，rebase结束后执行git stash pop恢复现场</strong><br>例如：<br><img src="../images/git1.png" alt=""><br>如果我想修改hash为<code>b5d486c8aa7b07c398332026ce7760e8558acbd6</code>这条提交记录的commit信息，可以执行命令:</p>
-<pre><code>git rebase -i HEAD~2
-</code></pre><p><img src="../images/git2.png" alt=""><br>进入Rebase文件后，找到要修改的commit记录前，将<code>pick</code>修改为<code>edit</code>，保存退出。<br>然后执行命令:</p>
-<pre><code>git commit --amend
-</code></pre><p>修改commit信息，在修改保存完成后，执行</p>
-<pre><code>git rebase --continue
-</code></pre><p>进行合并。此时执行<code>git log</code>查看最新的提交记录，发现hash为<code>b5d486c8aa7b07c398332026ce7760e8558acbd6</code>的提交其commit信息已经改变。<br><img src="../images/git3.png" alt=""></p>
-<h4 id="修改author信息"><a href="#修改author信息" class="headerlink" title="修改author信息"></a>修改author信息</h4><p>如果全局或本地某个仓库下的user.name、user.eamil存在问题，在我们提交过后，可以通过git命令进行修正。</p>
-<pre><code>git commit --amend --author=&#39;Your Name &lt;you@example.com&gt;&#39;
-</code></pre><p><img src="../images/git4.png" alt=""></p>
-<h3 id="合并commit"><a href="#合并commit" class="headerlink" title="合并commit"></a>合并commit</h3><p>在开发过程中，经常需要将多条提交记录合并成一条，使得git历史明确清晰。<br>git的commit合并，只允许向前合并，不允许向后合并或跨记录合并。<br><img src="../images/git5.png" alt=""><br>合并的过程与<code>修改commit信息</code>相似，只不过在编辑Rebase文件的时候，需要在<code>edit</code>的地方填写<code>squash</code>。<br><img src="../images/git6.png" alt=""><br>修改合并后的commit信息，合并记录不用执行<code>git commit --amend</code>和<code>git rebase --continue</code><br><img src="../images/git7.png" alt=""><br>如图会将两条commit message进行合并  </p>
-<h3 id="推送分支"><a href="#推送分支" class="headerlink" title="推送分支"></a>推送分支</h3><p>在修改完成后，我们需要保持本地和远程仓库同步，单独执行<code>git push origin ${branch}</code>时，会提示当前提交存在冲突。</p>
-<pre><code>git push origin +${branch}:${branch}
-</code></pre><p>需要执行以上命令，将本地分支强制推到远程分支上。</p>
+        <h3 id="Golang-Return-Defer-流程分析"><a href="#Golang-Return-Defer-流程分析" class="headerlink" title="Golang Return Defer 流程分析"></a>Golang Return Defer 流程分析</h3><p>之前回答过一个关于defer没有正确赋值的问题 <a href="https://studygolang.com/topics/5959#commentForm" target="_blank" rel="noopener">Golang中国-defer拿不到返回值</a>，感觉当时回答时写的都是别人总结出的的东西，没有进行深度思考，为什么会这样也没有搞清楚，后来自己特地测试分析了一波，有不对的地方还请指正</p>
+<h4 id="代码测试"><a href="#代码测试" class="headerlink" title="代码测试"></a>代码测试</h4><p>关于返回值遇到defer赋值有两种情况：  </p>
+<h5 id="匿名返回值"><a href="#匿名返回值" class="headerlink" title="匿名返回值"></a>匿名返回值</h5><pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+    fmt.Printf(&quot;x: %d\n&quot;, Parser())
+}
+
+func Parser() int {
+    x := 1
+    defer func() {
+        x = 2
+    }()
+    return x
+}
+</code></pre><p>这种情况下，defer中对变量x的赋值会失败，程序会输出<code>x: 1</code>，原本设想的是会输出<code>x: 2</code>。<br>出现这种情况的原因是，函数中<code>return</code>操作不是原子操作，在return阶段会执行三步操作：  </p>
+<ol>
+<li>返回值赋值。在这里因为返回值没有命名，所以进行了一个x赋值给<code>匿名变量</code>的操作  </li>
+<li>执行defer函数。执行<code>x = 2</code>，可以看到在第1步已经给返回值进行了赋值操作，所以这里x的改变不会影响到返回值。  </li>
+<li>函数返回。匿名变量的值返回给了调用者。  </li>
+</ol>
+<h5 id="命名返回值"><a href="#命名返回值" class="headerlink" title="命名返回值"></a>命名返回值</h5><pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+    fmt.Printf(&quot;x: %d\n&quot;, Parser())
+}
+
+func Parser() (x int) {
+    x = 1
+    defer func() {
+        x = 2
+    }()
+    return x
+}
+</code></pre><p>当使用命名返回值时，程序会输出预期中的<code>x: 2</code>。<br>还是对return执行的过程进行分解：  </p>
+<ol>
+<li>返回值赋值。返回值变量已经在程序定义时进行了声明，在return时不需要再使用匿名变量，所以原有的第一步给匿名变量赋值已经不存在了。  </li>
+<li>执行defer函数。因为返回值使用的是命名变量，在这里为x进行赋值依旧会生效。  </li>
+<li>返回返回。命名变量<code>x</code>的值返回给了调用者。</li>
+</ol>
+<h4 id="汇编分析"><a href="#汇编分析" class="headerlink" title="汇编分析"></a>汇编分析</h4><p>通过分析汇编代码，能更加直观的理解Golang对return-defer执行的操作。 </p>
+<h5 id="匿名返回值-1"><a href="#匿名返回值-1" class="headerlink" title="匿名返回值"></a>匿名返回值</h5><pre><code>    // 声明函数 Parser
+    0x0000 00000 (test.go:7)    TEXT    &quot;&quot;.Parser(SB), $40-8
+    0x0000 00000 (test.go:7)    MOVQ    (TLS), CX
+    0x0009 00009 (test.go:7)    CMPQ    SP, 16(CX)
+    0x000d 00013 (test.go:7)    JLS    127
+    // 分配堆栈空间
+    0x000f 00015 (test.go:7)    SUBQ    $40, SP
+    0x0013 00019 (test.go:7)    MOVQ    BP, 32(SP)
+    0x0018 00024 (test.go:7)    LEAQ    32(SP), BP
+    0x001d 00029 (test.go:7)    FUNCDATA    $0, gclocals·2a5305abe05176240e61b8620e19a815(SB)
+    0x001d 00029 (test.go:7)    FUNCDATA    $1, gclocals·33cdeccccebe80329f1fdbee7f5874cb(SB)
+    // r0数据寄存器赋值为0 -- 匿名返回值的初始化
+    0x001d 00029 (test.go:7)    MOVQ    $0, &quot;&quot;.~r0+48(SP)
+    // x变量赋值为1
+    0x0026 00038 (test.go:8)    MOVQ    $1, &quot;&quot;.x+24(SP)
+    0x002f 00047 (test.go:11)    LEAQ    &quot;&quot;.x+24(SP), AX
+    0x0034 00052 (test.go:11)    MOVQ    AX, 16(SP)
+    0x0039 00057 (test.go:9)    MOVL    $8, (SP)
+    0x0040 00064 (test.go:9)    LEAQ    &quot;&quot;.Parser.func1·f(SB), AX
+    0x0047 00071 (test.go:9)    MOVQ    AX, 8(SP)
+    0x004c 00076 (test.go:9)    PCDATA    $0, $0
+    // 注册defer函数
+    0x004c 00076 (test.go:9)    CALL    runtime.deferproc(SB)
+    0x0051 00081 (test.go:9)    TESTL    AX, AX
+    0x0053 00083 (test.go:9)    JNE    111
+
+    // -- 以下是return部分操作
+    // x赋值到r0寄存器 -- 匿名返回值的赋值操作
+    0x0055 00085 (test.go:12)    MOVQ    &quot;&quot;.x+24(SP), AX
+    0x005a 00090 (test.go:12)    MOVQ    AX, &quot;&quot;.~r0+48(SP)
+    // GC进行的操作
+    0x005f 00095 (test.go:12)    PCDATA    $0, $0
+    0x005f 00095 (test.go:12)    XCHGL    AX, AX
+    // 调用defer函数
+    0x0060 00096 (test.go:12)    CALL    runtime.deferreturn(SB)
+    0x0065 00101 (test.go:12)    MOVQ    32(SP), BP
+    // 回收堆栈空间并返回
+    0x006a 00106 (test.go:12)    ADDQ    $40, SP
+    0x006e 00110 (test.go:12)    RET
+</code></pre><p>因为汇编代码太长，这里只贴出Parser函数的汇编代码。<br>可以看到针对匿名返回值(r0)在程序开始时会初始化为默认值0，在函数结束Return时，分成了三步走的操作，赋值、defer、回收空间并返回。defer执行时，赋值操作<code>x -&gt; r0</code>已经执行完毕，所以返回值没有命名时，defer操作中对返回值的赋值无效。</p>
+<h5 id="命名返回值-1"><a href="#命名返回值-1" class="headerlink" title="命名返回值"></a>命名返回值</h5><pre><code>    // 声明函数Parser
+    0x0000 00000 (test.go:9)    TEXT    &quot;&quot;.Parser(SB), $32-8
+    0x0000 00000 (test.go:9)    MOVQ    (TLS), CX
+    0x0009 00009 (test.go:9)    CMPQ    SP, 16(CX)
+    0x000d 00013 (test.go:9)    JLS    108
+    // 分配堆栈空间
+    0x000f 00015 (test.go:9)    SUBQ    $32, SP
+    0x0013 00019 (test.go:9)    MOVQ    BP, 24(SP)
+    0x0018 00024 (test.go:9)    LEAQ    24(SP), BP
+    0x001d 00029 (test.go:9)    FUNCDATA    $0, gclocals·2a5305abe05176240e61b8620e19a815(SB)
+    0x001d 00029 (test.go:9)    FUNCDATA    $1, gclocals·33cdeccccebe80329f1fdbee7f5874cb(SB)
+    // x赋值为1
+    0x001d 00029 (test.go:10)    MOVQ    $1, &quot;&quot;.x+40(SP)
+    0x0026 00038 (test.go:13)    LEAQ    &quot;&quot;.x+40(SP), AX
+    0x002b 00043 (test.go:13)    MOVQ    AX, 16(SP)
+    0x0030 00048 (test.go:11)    MOVL    $8, (SP)
+    0x0037 00055 (test.go:11)    LEAQ    &quot;&quot;.Parser.func1·f(SB), AX
+    0x003e 00062 (test.go:11)    MOVQ    AX, 8(SP)
+    0x0043 00067 (test.go:11)    PCDATA    $0, $0
+    // 注册defer
+    0x0043 00067 (test.go:11)    CALL    runtime.deferproc(SB)
+    0x0048 00072 (test.go:11)    TESTL    AX, AX
+    0x004a 00074 (test.go:11)    JNE    92
+    0x004c 00076 (test.go:14)    PCDATA    $0, $0
+    0x004c 00076 (test.go:14)    XCHGL    AX, AX
+    // 调用defer
+    0x004d 00077 (test.go:14)    CALL    runtime.deferreturn(SB)
+    0x0052 00082 (test.go:14)    MOVQ    24(SP), BP
+    // 回收堆栈空间并返回
+    0x0057 00087 (test.go:14)    ADDQ    $32, SP
+    0x005b 00091 (test.go:14)    RET
+</code></pre><p>与<code>匿名返回值</code>的汇编相比较，<code>命名返回值</code>的进行的操作有一些差异。  </p>
+<ol>
+<li>分配栈帧空间上，匿名的栈帧大小为<code>$40(40字节)</code>,而命名的栈帧大小为<code>$32(32字节)</code>,8字节空间的差异主要来自，命名返回值直接使用了x，没有重新声明局部变量x。<br>栈帧空间的差异可以得到一个结论：命名返回值函数中使用的x就是实际的返回变量x，而匿名返回值函数中使用的x只是局部变量，实际返回的并不是x，而只是x赋给匿名变量(r0)的值。   </li>
+<li>在return执行过程中，命名返回值函数的return过程缺少了赋值操作，应该是因为在声明的同时已经经过初始化且函数中可以直接使用该变量，所以可以省略return返回时赋值的步骤。而匿名返回值在函数中无法直接使用，只可以在return时进行赋值。  </li>
+<li>因为1，2的差异，所以在使用命名返回值时，defer对返回值的影响可以直接体现出来，而在使用匿名返回值时，defer对x的二次赋值无法对匿名返回值产生影响。</li>
+</ol>
+<p>因为查找到的与Golang汇编相关的资料很少，只能看懂一小部分代码，不当之处还请指正。  </p>
+<p><strong>参考</strong>：<br><a href="https://lrita.github.io/2017/12/12/golang-asm/" target="_blank" rel="noopener">https://lrita.github.io/2017/12/12/golang-asm/</a>  </p>
+<p><a href="http://blog.rootk.com/post/golang-asm.html" target="_blank" rel="noopener">http://blog.rootk.com/post/golang-asm.html</a>  </p>
+<p><a href="https://my.oschina.net/henrylee2cn/blog/505535" target="_blank" rel="noopener">https://my.oschina.net/henrylee2cn/blog</a>  </p>
 
         
                 <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
@@ -550,7 +659,7 @@
                             本文使用<a href=https://creativecommons.org/licenses/by-nc-sa/4.0/"">CC BY-NA-SA 4.0</a>协议许可
                         </strong>
                         <br>
-                        <strong>本文链接：</strong><a href="http://404-notfound.com/git修改commit相关信息/">http://404-notfound.com/git修改commit相关信息/</a>
+                        <strong>本文链接：</strong><a href="http://404-notfound.com/golang-return-defer/">http://404-notfound.com/golang-return-defer/</a>
                     </p>
                 </blockquote>
         
@@ -606,8 +715,8 @@
 
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://404-notfound.com/git修改commit相关信息/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://404-notfound.com/git修改commit相关信息/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://404-notfound.com/golang-return-defer/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://404-notfound.com/golang-return-defer/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 
@@ -656,21 +765,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/UML类图/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/Dockerfile详解/" id="post_nav-older" class="next-content">
+        <a href="/prototype/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
