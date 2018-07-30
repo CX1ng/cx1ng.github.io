@@ -246,7 +246,7 @@
 
     
         <meta property="article:published_time" content="Fri Jul 06 2018 13:44:47 GMT+0800">
-        <meta property="article:modified_time" content="Tue Jul 10 2018 15:51:01 GMT+0800">
+        <meta property="article:modified_time" content="Mon Jul 30 2018 15:47:00 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -269,7 +269,7 @@
     "mainEntityOfPage": "http://404-notfound.com/vendor-workaround/index.html",
     "headline": "GoLand无法正确识别项目下Vendor目录的解决方案",
     "datePublished": "Fri Jul 06 2018 13:44:47 GMT+0800",
-    "dateModified": "Tue Jul 10 2018 15:51:01 GMT+0800",
+    "dateModified": "Mon Jul 30 2018 15:47:00 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "CX1ng",
@@ -370,7 +370,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#GoLand-无法正确识别Vendor目录"><span class="post-toc-number">1.</span> <span class="post-toc-text">GoLand 无法正确识别Vendor目录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#问题描述"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">问题描述:</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#解决方法"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">解决方法:</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#GoLand-无法正确识别Vendor目录"><span class="post-toc-number">1.</span> <span class="post-toc-text">GoLand 无法正确识别Vendor目录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#问题描述"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">问题描述:</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#解决方法"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">解决方法:</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Ps：经常遇到的另外一种情况："><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Ps：经常遇到的另外一种情况：</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -532,7 +532,8 @@
 lrwxr-xr-x  1 xxxx  staff    36B 10 26  2017 go -&gt; /Volumes/Workspace/go1.9Workspace/go
 </code></pre><h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法:"></a>解决方法:</h4><p>重新设置<code>Golbal GOPATH</code>，设置<code>GOPATH</code>指向软链接指向的文件夹</p>
 <p><div align="center"><br><img src="../images/gopath_setting_2.png" width="600" height="170" alt="gopath_setting_2" align="center"><br></div><br>GoLand可以正确识别本项目下的<code>vendor</code>文件夹了</p>
-<p><div align="center"><br><img src="../images/successful.png" width="600" height="170" alt="successful" align="center"><br></div><br>参考：<br><a href="https://youtrack.jetbrains.com/issue/GO-4237" target="_blank" rel="noopener">https://youtrack.jetbrains.com/issue/GO-4237</a></p>
+<p><div align="center"><br><img src="../images/successful.png" width="600" height="170" alt="successful" align="center"><br></div>   </p>
+<h4 id="Ps：经常遇到的另外一种情况："><a href="#Ps：经常遇到的另外一种情况：" class="headerlink" title="Ps：经常遇到的另外一种情况："></a>Ps：经常遇到的另外一种情况：</h4><p>当<code>GOPATH环境变量</code>没有正确设置时，GoLand也会无法正确识别<code>vendor</code>目录。<br>为此，请确保<code>GOPATH环境变量</code>指向的目录下，拥有正确的Golang文件夹层级结构，需包含<code>src</code>、<code>bin</code>、<code>pkg</code>三个子文件夹，且项目代码需位于<code>$GOPATH/src</code>文件夹下。<br>参考：<br><a href="https://youtrack.jetbrains.com/issue/GO-4237" target="_blank" rel="noopener">https://youtrack.jetbrains.com/issue/GO-4237</a></p>
 
         
                 <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
@@ -753,7 +754,7 @@ lrwxr-xr-x  1 xxxx  staff    36B 10 26  2017 go -&gt; /Volumes/Workspace/go1.9Wo
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
